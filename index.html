@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Der Shine 校園大使計畫 2026 ｜ 徵求 5–6 位歐洲留學創作者</title>
+<meta name="description" content="五道關卡、五個月、最高 NT$13,000 獎勵，另含實習陪跑課程全程免費。Der Shine 留德青山徵求 5–6 位在歐洲讀書的創作者。報名至 9/15。">
+<meta property="og:title" content="五道關卡。五個月。一段別人沒有的履歷。">
+<meta property="og:description" content="Der Shine 校園大使計畫 2026 徵件中，名額 5–6 位，報名至 9/15。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ambassador.dershine.com/">
+<!-- 不做主視覺（April 2026/08/11 決定）。沒有 og:image 時用 summary 卡，
+     指向不存在的圖檔會讓分享縮圖破圖，比沒有圖更糟。 -->
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1F3D2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   2. 設計 Token
+   ═══════════════════════════════════════════════════════════ */
+:root{
+  /* 2.1 品牌核心色（不可改，來自 Der Shine design system） */
+  --green-deep:#1F3D2B;
+  --green-mid:#3C6B4C;
+  --lime:#B6E84A;
+  --lime-soft:#E7F0B8;
+  --cream:#FAF9F1;
+  --ink:#16241C;
+  --paper:#FFFFFF;
+  --line:#E4E3D8;
+
+  /* 2.2 活動色擴充（僅用於插畫與強調，不得用於按鈕） */
+  --clay:#E2725B;
+  --clay-soft:#F6D9CF;
+  --mist:#7FA8C9;
+  --mist-soft:#DCE9F1;
+  --sand:#EFE7D2;
+
+  /* 2.3 字體 */
+  --font-display:'Noto Serif TC', serif;
+  --font-body:'Noto Sans TC', sans-serif;
+
+  /* 2.4 尺度 */
+  --r-sm:10px; --r-md:16px; --r-lg:28px; --r-pill:999px;
+  --sp:clamp(56px, 9vw, 120px);
+  --maxw:1120px;
+  --shadow-card:0 10px 30px rgba(31,61,43,.08);
+  --shadow-lift:0 18px 44px rgba(31,61,43,.16);
+
+  --fs-hero:clamp(38px, 8vw, 84px);
+  --fs-h2:clamp(28px, 4.6vw, 52px);
+  --fs-h3:clamp(19px, 2.2vw, 26px);
+  --fs-body:clamp(15px, 1.7vw, 18px);
+  --fs-eyebrow:clamp(11px, 1.3vw, 13px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:1.75;
+  color:var(--ink);
+  background-color:var(--cream);
+  /* 2.5 紙感底紋 */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+
+/* ── 共用排版 ────────────────────────────── */
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+section{position:relative;z-index:1;padding-block:var(--sp)}
+.eyebrow{
+  font-family:var(--font-body);font-weight:700;
+  font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;
+  color:var(--green-mid);margin:0 0 14px;
+}
+h1,h2,h3{font-family:var(--font-display);font-weight:900;color:var(--green-deep);margin:0}
+h2{font-size:var(--fs-h2);line-height:1.2;letter-spacing:.01em}
+h3{font-size:var(--fs-h3);line-height:1.35;font-weight:700}
+p{margin:0 0 1em}
+.lead{font-size:clamp(16px,2vw,20px);color:var(--green-mid);line-height:1.85}
+.small{font-size:14px;line-height:1.8}
+.sec-head{max-width:640px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head p{color:var(--green-mid);margin-top:14px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:99;
+  background:var(--green-deep);color:var(--lime);padding:12px 20px;border-radius:0 0 var(--r-sm) 0;
+}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+
+/* ── 按鈕 ────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green-deep);color:var(--lime);
+  border:0;border-radius:var(--r-pill);padding:16px 34px;
+  font-weight:700;text-decoration:none;cursor:pointer;
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),box-shadow .2s;
+  box-shadow:var(--shadow-card);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+/* 觸控目標 ≥44px：外層撐高，底線只跟著文字，不會被推開 */
+.link-under{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--green-deep);font-weight:500;text-decoration:none;
+}
+.link-under > span{border-bottom:2px solid var(--lime);padding-bottom:2px}
+.link-under:hover > span{border-bottom-color:var(--green-deep)}
+
+/* ── 手繪螢光筆底線 ───────────────────── */
+.mark{position:relative;display:inline-block;z-index:0}
+.mark svg{position:absolute;left:0;bottom:-2px;width:100%;height:.38em;z-index:-1}
+
+/* ── 波浪分隔線 ───────────────────────── */
+.divider{display:block;width:100%;height:clamp(24px,4vw,44px);margin-bottom:-1px}
+.divider.flip{transform:scaleY(-1);margin:-1px 0 0}
+
+/* ── 進場動畫 ─────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ═══════════════════════════════════════════════════════════
+   S1 Hero
+   ═══════════════════════════════════════════════════════════ */
+.hero{min-height:min(92vh,820px);display:flex;align-items:center;padding-block:clamp(40px,7vw,80px)}
+.hero-grid{display:grid;gap:clamp(28px,5vw,48px);align-items:center}
+.pill{
+  display:inline-block;background:var(--green-deep);color:var(--lime);
+  border-radius:var(--r-pill);padding:8px 18px;
+  font-size:var(--fs-eyebrow);font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+}
+.hero h1{font-size:var(--fs-hero);line-height:1.12;margin:22px 0 20px;letter-spacing:-.01em}
+.hero .lead{max-width:34em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0 12px;max-width:520px}
+.stats-note{max-width:520px;font-size:13px;line-height:1.75;color:var(--green-mid);margin:0 0 30px}
+.stats-note strong{color:var(--green-deep)}
+.stat{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:16px 12px;text-align:center;box-shadow:var(--shadow-card);
+}
+.stat b{display:block;font-family:var(--font-display);font-weight:900;
+  font-size:clamp(20px,3.4vw,34px);line-height:1.15;color:var(--green-deep);white-space:nowrap}
+.stat span{display:block;margin-top:6px;font-size:11px;letter-spacing:.14em;color:var(--green-mid);font-weight:700}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px}
+.deadline{position:relative;display:inline-block;margin-top:30px;padding:10px 22px;font-weight:700;font-size:14px;color:var(--green-deep)}
+.deadline svg{position:absolute;inset:-6px -4px;width:calc(100% + 8px);height:calc(100% + 12px)}
+.hero-art{position:relative}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.float{animation:float 6s ease-in-out infinite}
+
+/* ═══════════════════════════════════════════════════════════
+   S2 這是什麼
+   ═══════════════════════════════════════════════════════════ */
+.sand{background:var(--sand)}
+.cards-3{display:grid;gap:20px}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:30px 26px;box-shadow:var(--shadow-card);
+}
+.card .ico{color:var(--green-deep);margin-bottom:16px;display:block}
+.card h3{margin-bottom:10px}
+.card p{margin:0;color:var(--green-mid);font-size:16px}
+
+/* ═══════════════════════════════════════════════════════════
+   S3 我們在找誰
+   ═══════════════════════════════════════════════════════════ */
+.split{display:grid;gap:clamp(28px,5vw,56px)}
+.reqs{display:grid;gap:16px}
+.req{
+  position:relative;background:var(--paper);border:1.5px solid var(--line);
+  border-radius:var(--r-md);padding:22px 22px 22px 62px;
+}
+.req.tricky{border:1.8px dashed var(--clay);background:#fff}
+.req .chk{position:absolute;left:20px;top:22px;color:var(--green-deep)}
+.req .no{font-size:11px;letter-spacing:.18em;font-weight:700;color:var(--green-mid);display:block;margin-bottom:4px}
+.req p{margin:0;font-size:16px;line-height:1.7}
+.req strong{color:var(--green-deep)}
+.notes{margin-top:22px;color:var(--green-mid);font-size:14px;line-height:1.9}
+.notes p{margin:0 0 6px;padding-left:18px;position:relative}
+.notes p::before{content:'—';position:absolute;left:0;opacity:.5}
+.who-art{display:flex;justify-content:center}
+
+/* ═══════════════════════════════════════════════════════════
+   S4 五道關卡
+   ═══════════════════════════════════════════════════════════ */
+.quests{display:grid;gap:22px;margin-top:8px}
+.quest{
+  -webkit-appearance:none;appearance:none;background:none;border:0;padding:0;
+  perspective:1200px;cursor:pointer;text-align:left;width:100%;
+}
+.quest-inner{
+  display:block;position:relative;width:100%;height:250px;
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.quest-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:var(--r-lg);padding:26px 24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+}
+.quest-front{background:var(--paper);border:2px dashed var(--line);box-shadow:var(--shadow-card)}
+.quest-back{
+  background:var(--green-deep);color:var(--cream);transform:rotateY(180deg);
+  border:2px solid var(--green-deep);box-shadow:var(--shadow-lift);
+}
+.quest .num{display:block;font-size:11px;letter-spacing:.18em;font-weight:700;color:var(--green-mid);text-transform:uppercase}
+.quest .qmark{display:block;font-family:var(--font-display);font-weight:900;font-size:clamp(48px,9vw,72px);
+  line-height:1;color:var(--green-mid);opacity:.35;margin:10px 0 14px}
+.quest .scope{display:block;font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--green-deep)}
+.quest .scope em{font-style:normal;display:block;font-family:var(--font-body);font-weight:700;
+  font-size:10px;letter-spacing:.2em;color:var(--green-mid);margin-top:5px}
+.quest .lock{position:absolute;top:16px;right:18px;color:var(--green-mid);opacity:.45}
+.quest-back .scope-big{display:block;font-family:var(--font-display);font-weight:900;font-size:clamp(24px,4vw,32px);color:var(--lime);margin-bottom:4px}
+.quest-back .scope-en{display:block;font-size:10px;letter-spacing:.2em;font-weight:700;color:var(--lime-soft);opacity:.7;text-transform:uppercase}
+.quest-back .teaser{display:block;font-size:15px;line-height:1.7;margin:16px 0 0;color:var(--cream);max-width:22em}
+.quest-back .after{position:absolute;left:0;right:0;bottom:18px;font-size:11px;letter-spacing:.1em;color:var(--lime-soft);opacity:.7}
+.quest-back .qico{color:var(--lime);opacity:.9;margin-bottom:10px}
+.quest[aria-expanded="true"] .quest-inner{transform:rotateY(180deg)}
+.quest:focus-visible .quest-inner{transform:rotateY(180deg)}
+.quest-foot{text-align:center;color:var(--green-mid);font-size:14px;margin-top:34px}
+
+/* ═══════════════════════════════════════════════════════════
+   S5 你會拿到什麼
+   ═══════════════════════════════════════════════════════════ */
+.dark{background:var(--green-deep);color:var(--cream)}
+.dark h2,.dark h3{color:var(--cream)}
+.dark .eyebrow{color:var(--lime-soft);opacity:.75}
+.prize-hero{text-align:center;max-width:760px;margin:0 auto clamp(40px,6vw,64px)}
+.prize-hero .cap{font-size:15px;letter-spacing:.06em;color:var(--lime-soft);opacity:.85;margin:0}
+.prize-num{position:relative;display:inline-block;font-family:var(--font-display);font-weight:900;
+  font-size:var(--fs-hero);line-height:1.1;color:var(--lime);margin:6px 0 4px;white-space:nowrap}
+.prize-num svg{position:absolute;left:-2%;bottom:-10px;width:104%;height:16px}
+.prize-hero .plus{font-size:14px;color:var(--lime-soft);opacity:.8;margin:16px 0 0}
+.group-title{
+  text-align:center;font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;
+  font-weight:700;color:var(--lime);margin:0 0 22px;
+}
+.group-title span{color:var(--lime-soft);opacity:.6;text-transform:none;letter-spacing:.04em}
+.prizes{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.prize{
+  position:relative;width:240px;flex:0 1 240px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(182,232,74,.25);
+  border-radius:var(--r-md);padding:24px 20px 22px;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s;
+}
+.prize.sure{border-color:var(--lime)}
+.prize:hover{transform:translateY(-4px);border-color:var(--lime);background:rgba(255,255,255,.09)}
+.prize .pico{display:block;color:var(--lime);margin-bottom:14px;transition:transform .25s}
+.prize:hover .pico{transform:scale(1.08)}
+.prize h3{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:8px;line-height:1.45}
+.prize p{margin:0;font-size:14px;line-height:1.75;color:var(--lime-soft);opacity:.85}
+.prize .tag{position:absolute;top:14px;right:14px;color:var(--lime);opacity:.85}
+.only-one{display:inline-block;background:var(--lime);color:var(--green-deep);
+  font-size:11px;font-weight:700;letter-spacing:.1em;border-radius:var(--r-pill);padding:2px 10px;margin-left:6px;vertical-align:2px}
+.group-sep{display:block;width:180px;height:12px;margin:40px auto}
+.prize-foot{text-align:center;color:var(--lime-soft);opacity:.75;font-size:13px;margin:36px 0 0}
+
+/* ═══════════════════════════════════════════════════════════
+   S6 五個月怎麼走
+   ═══════════════════════════════════════════════════════════ */
+.tl{position:relative;margin-top:20px}
+.tl-line{display:none}
+.tl-steps{display:grid;gap:0}
+.tl-step{position:relative;padding:0 0 30px 40px}
+.tl-step::before{
+  content:'';position:absolute;left:8px;top:26px;bottom:-4px;width:2px;
+  background:repeating-linear-gradient(var(--clay) 0 6px,transparent 6px 12px);opacity:.5;
+}
+.tl-step:last-child::before{display:none}
+.tl-dot{position:absolute;left:0;top:7px;width:18px;height:18px;border-radius:50%;
+  background:var(--clay);border:3px solid var(--cream);box-shadow:0 0 0 1px rgba(226,114,91,.35)}
+.tl-date{font-family:var(--font-display);font-weight:900;font-size:20px;color:var(--clay);line-height:1.2}
+.tl-label{font-weight:700;color:var(--green-deep);margin-top:2px}
+.tl-desc{color:var(--green-mid);font-size:15px;margin:4px 0 0}
+.tl-ends{display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px;color:var(--green-deep)}
+
+/* ═══════════════════════════════════════════════════════════
+   S7 你要付出什麼
+   ═══════════════════════════════════════════════════════════ */
+.duties{display:grid;gap:16px}
+.duty{display:flex;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px}
+.duty .dico{flex:0 0 auto;color:var(--green-deep);margin-top:2px}
+.duty h3{font-size:17px;margin-bottom:4px}
+.duty p{margin:0;color:var(--green-mid);font-size:15px}
+.receipt{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:26px 24px;margin-top:26px;box-shadow:var(--shadow-card);
+}
+.receipt .rt{font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--green-mid);margin:0 0 16px}
+.rrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:8px 10px;font-size:15px}
+.rrow b{font-family:var(--font-display);font-weight:900;color:var(--clay);font-size:19px;white-space:nowrap}
+.rrow.total{background:var(--lime-soft);border-radius:var(--r-sm)}
+.rsep{display:block;width:100%;height:10px;margin:6px 0}
+.honest{margin-top:22px;color:var(--green-mid);font-size:14px;line-height:1.9}
+
+/* ═══════════════════════════════════════════════════════════
+   S8 FAQ
+   ═══════════════════════════════════════════════════════════ */
+.faq{max-width:800px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;list-style:none;font-weight:700;color:var(--green-deep);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:17px;line-height:1.6;
+  min-height:44px}   /* 觸控目標：單行標題只有 27px，手機上太難點 */
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-family:var(--font-body);font-size:26px;color:var(--clay);
+  transition:transform .25s;line-height:1;flex:0 0 auto}
+details[open] summary::after{transform:rotate(45deg)}
+.faq-body{padding-top:14px;color:var(--green-mid);font-size:16px}
+.faq-body p{margin:0 0 .85em}
+.faq-body p:last-child{margin-bottom:0}
+.faq-body ul{margin:0 0 .85em;padding-left:20px}
+.faq-body li{margin-bottom:.5em}
+.faq-body strong{color:var(--green-deep)}
+.faq-sub{font-weight:700;color:var(--green-deep);margin:1.2em 0 .5em!important}
+
+/* ═══════════════════════════════════════════════════════════
+   S9 報名表單
+   ═══════════════════════════════════════════════════════════ */
+.form-card{
+  position:relative;max-width:640px;margin:0 auto;background:var(--paper);
+  border-radius:var(--r-lg);box-shadow:var(--shadow-lift);overflow:hidden;
+}
+.progress{position:sticky;top:0;z-index:5;height:6px;background:rgba(31,61,43,.12)}
+.progress i{display:block;height:100%;width:0;background:var(--lime);transition:width .3s cubic-bezier(.2,.8,.2,1)}
+/* 表單卡片是深色區塊裡的淺色島 —— 必須把 .dark 的 cream 字色收回來 */
+.form-card h2,.form-card h3{color:var(--green-deep)}
+.form-card{color:var(--ink)}
+.form-inner{padding:clamp(26px,5vw,44px)}
+.form-head{margin-bottom:30px}
+.form-head h2{font-size:clamp(26px,4vw,38px)}
+.form-head p{margin:10px 0 0;color:var(--green-mid);font-size:15px}
+.fsec{margin-bottom:14px}
+.fsec-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin:34px 0 4px}
+.fsec-head:first-child{margin-top:0}
+.fsec-head h3{font-family:var(--font-display);font-weight:900;font-size:20px}
+.fsec-head h3 i{font-style:normal;color:var(--clay)}
+.fsec-count{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--green-mid);white-space:nowrap}
+.fsec-desc{color:var(--green-mid);font-size:14px;margin:0 0 18px}
+.fsep{display:block;width:100%;height:10px;margin:0 0 20px}
+.fields{display:grid;gap:22px}
+.field label.lb{display:block;font-weight:700;font-size:15px;color:var(--green-deep);margin-bottom:2px;line-height:1.6}
+.field .req-star{color:var(--clay);margin-left:4px}
+.field .hint{display:block;font-size:13px;color:var(--green-mid);margin:2px 0 10px;line-height:1.6}
+.field input[type=text],.field input[type=email],.field input[type=url],.field select,.field textarea{
+  width:100%;font-family:inherit;font-size:16px;line-height:1.6;color:var(--ink);
+  background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);
+  padding:14px 16px;transition:border-color .2s,box-shadow .2s;
+}
+.field textarea{min-height:120px;resize:vertical}
+.field select{appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%233C6B4C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--green-deep);box-shadow:0 0 0 4px rgba(182,232,74,.35)}
+.field.invalid input,.field.invalid select,.field.invalid textarea,.field.invalid .opts{border-color:var(--clay)}
+.field.invalid .lb{color:var(--clay)}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+.field.shake{animation:shake .3s ease-in-out}
+.err{display:none;font-size:13px;color:var(--clay);font-weight:700;margin-top:8px}
+.field.invalid .err{display:block}
+.counter{display:block;text-align:right;font-size:12px;color:var(--green-mid);margin-top:6px}
+.counter.warn{color:var(--clay);font-weight:700}
+
+/* pill 選項 */
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt span{
+  display:block;border:1.5px solid var(--line);border-radius:var(--r-pill);
+  padding:10px 18px;font-size:15px;cursor:pointer;background:var(--paper);
+  transition:background .18s,border-color .18s,color .18s;line-height:1.5;
+}
+.opt span:hover{border-color:var(--green-mid)}
+.opt input:checked + span{background:var(--green-deep);border-color:var(--green-deep);color:var(--lime);font-weight:700}
+.opt input:focus-visible + span{outline:3px solid var(--clay);outline-offset:3px}
+
+/* 同意條款：必須是原生方框，不做成 pill */
+.consent{display:grid;gap:12px}
+.consent label{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.7;
+  color:var(--ink);cursor:pointer;background:#FBFBF6;border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px}
+.consent input[type=checkbox]{flex:0 0 auto;width:20px;height:20px;margin-top:2px;accent-color:var(--green-deep)}
+.consent a{color:var(--green-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* 資料使用說明：GDPR 的「看得到自己同意了什麼」，直接放在勾選框下方 */
+details.notice{border:0;border-top:1px solid var(--line);margin-top:14px;padding:14px 0 0}
+details.notice summary{font-size:14px;font-weight:700;color:var(--green-mid)}
+details.notice summary::after{font-size:20px}
+.notice-body{padding-top:10px}
+.notice-body p{font-size:13px;line-height:1.85;color:var(--green-mid);margin:0 0 8px}
+.notice-body p:last-child{margin-bottom:0}
+.notice-body strong{color:var(--green-deep)}
+.notice-body a{color:var(--green-deep);text-decoration:underline;text-underline-offset:2px}
+
+/* 就讀資訊群組 */
+.fgroup{border:1.5px solid var(--line);border-radius:var(--r-md);padding:18px 18px 20px}
+.fgroup > .glabel{display:block;font-weight:700;font-size:15px;color:var(--green-deep);margin-bottom:12px}
+.fgroup .gfields{display:grid;gap:-1px}
+.fgroup .field input{border-radius:0}
+.fgroup .field:first-child input{border-radius:var(--r-sm) var(--r-sm) 0 0}
+.fgroup .field:last-child input{border-radius:0 0 var(--r-sm) var(--r-sm)}
+.fgroup .field + .field input{margin-top:-1.5px}
+.fgroup .field input:focus{position:relative;z-index:2;border-radius:var(--r-sm)}
+
+.form-actions{margin-top:34px}
+.form-actions .btn{width:100%;justify-content:center}
+.form-note{text-align:center;font-size:13px;color:var(--green-mid);margin:14px 0 0}
+.spinner{width:18px;height:18px;border:2.5px solid rgba(182,232,74,.3);border-top-color:var(--lime);
+  border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.formerr{display:none;margin-top:18px;background:#FDECE8;border:1.5px solid var(--clay);
+  border-radius:var(--r-sm);padding:16px 18px;color:#9C3A26;font-size:14px;line-height:1.7}
+.formerr.on{display:block}
+.restored{display:none;background:var(--lime-soft);border-radius:var(--r-sm);
+  padding:12px 16px;font-size:13px;color:var(--green-deep);margin-bottom:22px;
+  justify-content:space-between;align-items:center;gap:14px}
+.restored.on{display:flex}
+.restored button{background:none;border:0;text-decoration:underline;cursor:pointer;font-size:13px;color:var(--green-mid);padding:0;flex:0 0 auto}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.success{display:none;text-align:center;padding:clamp(34px,6vw,56px) clamp(24px,5vw,44px)}
+.success.on{display:block}
+.success h2{margin-bottom:14px}
+.success p{color:var(--green-mid);font-size:16px;max-width:26em;margin-inline:auto}
+.fade-out{opacity:0;transition:opacity .35s}
+
+/* ═══════════════════════════════════════════════════════════
+   S10 Footer
+   ═══════════════════════════════════════════════════════════ */
+footer{background:var(--green-deep);color:var(--cream);padding:clamp(48px,7vw,80px) 0 40px;position:relative;overflow:hidden}
+.foot-grid{display:grid;gap:34px;align-items:end}
+footer .brand{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,4vw,34px);color:var(--cream)}
+footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
+.foot-links{display:flex;flex-wrap:wrap;gap:14px 24px;margin-top:24px;font-size:15px}
+.foot-links a{color:var(--lime);text-decoration:none;border-bottom:1px solid rgba(182,232,74,.4);padding-bottom:2px}
+.foot-links a:hover{border-bottom-color:var(--lime)}
+.foot-bot{margin-top:40px;padding-top:22px;border-top:1px solid rgba(231,240,184,.18);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  font-size:13px;color:var(--lime-soft);opacity:.65}
+
+/* ═══════════════════════════════════════════════════════════
+   4. 貫穿全頁的路徑
+   ═══════════════════════════════════════════════════════════ */
+.trail-wrap{position:relative}
+.trail{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+/* ═══════════════════════════════════════════════════════════
+   12. 響應式斷點
+   ═══════════════════════════════════════════════════════════ */
+/* #wobble 只套 hero 與 footer 兩張大圖。窄螢幕與 reduced-motion 一律關掉 ——
+   用 CSS 而非 JS，才會跟著旋轉／改變視窗即時生效 */
+.wobbly{filter:url(#wobble)}
+@media (max-width:480px){
+  .wobbly{filter:none}
+  .hero-art{width:78%;margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){ .wobbly{filter:none} }
+@media (min-width:481px){
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+  .reqs{grid-template-columns:repeat(2,1fr)}
+  .duties{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:768px){
+  .cards-3{grid-template-columns:repeat(3,1fr)}
+  .stats{gap:16px}
+  .fgroup .gfields{grid-template-columns:1fr 1fr}
+  .fgroup .field.full{grid-column:1 / -1}
+  .fgroup .field input{border-radius:var(--r-sm)!important;margin-top:0!important}
+  .fgroup .gfields{display:grid;gap:12px}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:55fr 45fr}
+  .split{grid-template-columns:40fr 60fr;align-items:start}
+  .split.rev{grid-template-columns:1fr 1fr}
+  /* 左右交錯掛在路徑兩側。用 margin 而非 transform —— transform 會與 .reveal 的進場位移打架 */
+  .quests{grid-template-columns:repeat(2,1fr);gap:28px 60px}
+  .quest:nth-child(even){margin-top:46px}
+  .quest:nth-child(5){grid-column:1 / -1;max-width:calc(50% - 30px);margin:20px auto 0}
+  .foot-grid{grid-template-columns:1.4fr 1fr}
+  /* 水平時間軸 */
+  .tl-steps{grid-template-columns:repeat(5,1fr);gap:0;padding-top:46px}
+  .tl-step{padding:0 14px 0 0}
+  .tl-step::before{left:9px;right:0;top:-24px;bottom:auto;width:auto;height:2px;
+    background:repeating-linear-gradient(90deg,var(--clay) 0 6px,transparent 6px 12px)}
+  .tl-dot{left:0;top:-32px}
+  .tl-line{display:block;position:absolute;top:0;left:0;width:100%;height:40px}
+}
+@media (hover:hover) and (min-width:900px){
+  .quest:hover .quest-inner{transform:rotateY(180deg)}
+}
+
+/* 貼紙式微旋轉（僅桌機，手機不旋轉避免擠壓） */
+@media (min-width:768px){
+  .quest.rot1 .quest-front{transform:rotate(-1.5deg)}
+  .quest.rot2 .quest-front{transform:rotate(1deg)}
+  .quest.rot3 .quest-front{transform:rotate(-.8deg)}
+  .quest.rot4 .quest-front{transform:rotate(1.4deg)}
+  .quest.rot5 .quest-front{transform:rotate(-1deg)}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   11. 全域無障礙開關
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal{opacity:1;transform:none}
+  .float{animation:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#apply">跳到報名表單</a>
+
+<!-- ═══ 共用 SVG defs ═══════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="7" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" opacity=".06"/>
+    </filter>
+
+    <!-- ── 手繪圖示庫（stroke 用 currentColor，由父層決定顏色）── -->
+    <g id="ds-icons">
+      <symbol id="i-calendar" viewBox="0 0 40 40">
+        <path d="M6.4,11.2 C14,10.2 27,10.6 33.8,11 C34.2,18 34,28.5 33.4,33.4 C25,34.2 13,34 6.6,33.2 C6,27 6,17.5 6.4,11.2 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.8,17.6 C15,16.9 27,17.1 33.6,17.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M13,6.6 L12.8,12.4 M27.2,6.4 L27,12.2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M12.4,23.4 h4.2 M22.6,23.2 h4.6 M12.6,28.4 h4 M22.4,28.6 h4.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 40 40">
+        <path d="M8.6,17.8 C15,17 25.4,17.1 31.6,17.6 C32.2,23 32,29.6 31.4,34 C24,34.7 15,34.6 8.8,33.9 C8.2,29.4 8.1,22.8 8.6,17.8 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.4,17.4 C13,13 13.6,7.4 20.2,7.2 C26.8,7 27.2,12.6 27,17.6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M20.1,23.6 C21.9,23.5 22.6,25 22,26.2 C21.6,27 20.6,27.3 20.2,28.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-trophy" viewBox="0 0 40 40">
+        <path d="M11.4,6.8 C17,6.2 24,6.3 28.8,6.9 C29.2,13.4 28,20.6 20.2,21.2 C12.4,21.8 11,14 11.4,6.8 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M11.4,9.4 C8,8.8 5.4,10 5.8,12.8 C6.2,15.8 9,17.4 12.2,17.2 M28.8,9.2 C32.2,8.6 34.8,9.8 34.4,12.8 C34,15.8 31,17.6 28,17.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M20.2,21.4 L20,27.6 M14.2,33.6 C17,32.8 23,32.9 26,33.4 M15.4,33.4 C15.6,30 17.2,27.6 20,27.6 C22.8,27.6 24.6,30 24.8,33.4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 28 28">
+        <path d="M3.4,14.6 C6,17.2 8.2,20.4 10.4,23.6 C14.6,15.2 19,8.4 25.2,3.2" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12,2.6 C13.4,6.2 14.4,8.2 15.2,9.2 C16.4,9.6 18.6,10 21.4,10.2 C19.2,12.2 17.6,13.8 17,14.8 C17.2,16.4 17.6,18.6 18.4,21.2 C15.8,19.8 13.8,18.8 12,18.4 C10.4,18.8 8.4,19.8 5.6,21.4 C6.4,18.4 6.8,16.2 6.8,14.9 C6.2,13.8 4.8,12.2 2.6,10.4 C5.4,10 7.6,9.6 8.8,9.2 C9.6,8.2 10.6,6.2 12,2.6 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-camera" viewBox="0 0 40 40">
+        <path d="M4.6,13.6 C11,12.6 28,12.7 35.4,13.4 C36,19.6 35.8,27.4 35.2,32.4 C27,33.4 12,33.2 4.8,32.4 C4.2,27 4.1,19 4.6,13.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M14.2,13.2 C15,11 15.8,8.6 16.6,7.4 C19,7 21.4,7 23.6,7.4 C24.4,8.8 25.2,11 25.8,13.4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M20.2,17.4 C24.8,17.2 27.8,20.4 27.6,23.4 C27.4,26.8 24.4,29.2 20,29 C16,28.8 13,26 13.2,22.8 C13.4,19.8 16,17.6 20.2,17.4 Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </symbol>
+      <symbol id="i-connect" viewBox="0 0 40 40">
+        <path d="M12.6,10.4 C17.6,10.2 20.6,13.8 20.4,17.6 C20.2,21.8 17,24.6 12.6,24.4 C8.4,24.2 5.6,21 5.8,17.2 C6,13.4 8.8,10.6 12.6,10.4 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+        <path d="M27.4,15.6 C32.4,15.4 35.4,19 35.2,22.8 C35,27 31.8,29.8 27.4,29.6 C23.2,29.4 20.4,26.2 20.6,22.4 C20.8,18.6 23.6,15.8 27.4,15.6 Z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+        <path d="M14.6,26.4 C18,29.6 22.6,30.4 26.2,29.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4"/>
+      </symbol>
+      <symbol id="i-note" viewBox="0 0 40 40">
+        <path d="M20,10.4 C16.2,7.6 11,6.8 5.6,7.4 C5,15 5.1,25 5.6,32.4 C11,31.8 16.4,32.6 20,35.2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M20,10.4 C23.8,7.6 29,6.8 34.4,7.4 C35,15 34.9,25 34.4,32.4 C29,31.8 23.6,32.6 20,35.2 L20,10.4 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M9.6,14.4 C12,14 14.4,14.2 16,14.8 M9.4,20.4 C12,20 14.6,20.2 16.2,20.8 M24.2,14.6 C26.4,14 29,14.1 30.6,14.6 M24,20.6 C26.4,20 29,20.2 30.4,20.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-growth" viewBox="0 0 40 40">
+        <path d="M5.4,32.6 C9,26.4 12.4,22.8 14.6,23 C17,23.2 18.2,27.4 21,27.2 C24.2,27 27.8,18.6 34.2,9.4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M26.6,8.6 C29.6,8.8 32.4,8.9 34.6,9.2 C34.8,11.6 34.9,14.4 34.8,17.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-summit" viewBox="0 0 40 40">
+        <path d="M2.6,32.4 C8,31.6 32,31.7 37.4,32.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M4.6,32 C9.4,24.4 13,18.6 15.6,18.4 C18,18.2 20,22.4 22.6,22.6 C25,22.8 28,17 32.6,9.4 C34.6,15.8 36,25.2 36.4,32.2" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M32.6,9.6 L32.4,3.4 M32.6,4 C34.8,3.4 36.6,4.4 38,5.2 C36.4,6.2 34.6,7.2 32.6,7.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 40 40">
+        <path d="M6.4,7.6 C11.4,6.8 16.4,7.4 20,10 C23.6,7.4 28.6,6.8 33.6,7.6 C34.2,15.4 34.1,25 33.6,32.6 C28.6,31.9 23.6,32.6 20,35 C16.4,32.6 11.4,31.9 6.4,32.6 C5.8,25 5.8,15.4 6.4,7.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M20,10.2 L20,35" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </symbol>
+      <symbol id="i-receipt" viewBox="0 0 40 40">
+        <path d="M8.4,4.6 C15,3.8 25,3.9 31.6,4.6 C32.2,14 32.1,26 31.6,35.4 C29.6,34 27.6,33.9 25.6,35.2 C23.6,33.8 21.6,33.8 19.8,35.2 C18,33.8 16,33.8 14,35.2 C12,33.9 10.2,34 8.4,35.4 C7.8,26 7.8,14 8.4,4.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M13.4,13.4 C17.6,12.8 23,12.9 26.8,13.4 M13.2,20.4 C17.6,19.8 23,19.9 26.6,20.4 M13.4,27.2 C16.2,26.8 19.4,26.9 21.6,27.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-cert" viewBox="0 0 40 40">
+        <path d="M4.6,7.6 C13,6.6 27,6.7 35.4,7.4 C36,14 35.9,22 35.4,28.4 C27,29.2 13,29.1 4.6,28.4 C4,22 4,14 4.6,7.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M10.4,13.4 C15,12.8 21,12.9 25,13.4 M10.2,19.2 C14,18.8 18,18.9 21,19.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M27.6,20.6 C30.6,20.4 32.4,22.2 32.2,24.2 C32,26.4 30.2,27.8 27.8,27.6 C25.4,27.4 24,25.8 24.2,23.8 C24.4,21.8 25.8,20.7 27.6,20.6 Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M25.2,27.2 L24.4,34.6 L28,32.2 L31.4,34.8 L30.6,27.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 40 40">
+        <path d="M4.6,9.6 C13,8.6 27,8.7 35.4,9.4 C36,16 35.9,25 35.4,31.4 C27,32.2 13,32.1 4.6,31.4 C4,25 4,16 4.6,9.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M5.4,10.6 C11,15.8 16,19.8 20,20 C24,20.2 29.4,16.2 34.8,10.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-money" viewBox="0 0 40 40">
+        <path d="M13.4,12.6 C16.6,11.8 23.6,11.9 26.8,12.6 C31.6,16.6 34.6,23.4 33.4,28.8 C32.2,34 27,35.4 20,35.4 C13,35.4 7.8,34 6.6,28.8 C5.4,23.4 8.6,16.6 13.4,12.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M14.6,12.4 C13.6,9.4 13.8,6.6 15.4,4.8 C17.6,6.4 22.4,6.4 24.6,4.6 C26.2,6.6 26.4,9.4 25.4,12.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M23.6,20.4 C22.4,18.8 17.4,18.2 16.8,21.4 C16.2,24.6 23.4,23.4 23,26.8 C22.6,30 17.2,29.8 16.2,27.8 M20,16.6 L20,18.6 M20,29.4 L20,31.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-hand" viewBox="0 0 40 40">
+        <path d="M2.6,15.6 C7,14.4 10.8,14.8 13.8,16.8 M37.4,15.4 C33,14.2 29.2,14.6 26.2,16.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M13.8,16.8 C16.2,18.6 18.2,20.6 20,22.8 C21.8,20.6 23.8,18.6 26.2,16.6 C28.6,19.2 29.6,22.4 28.2,24.8 C26.2,28.2 22.4,28.6 20,26.2 C17.6,28.6 13.8,28.2 11.8,24.8 C10.4,22.4 11.4,19.2 13.8,16.8 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16.4,22.2 C17.4,23.3 18.4,24.3 19.3,25.1 M23.6,22 C22.6,23.1 21.6,24.1 20.7,24.9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-medal" viewBox="0 0 40 40">
+        <path d="M11.6,4.6 C13.6,8.6 15.8,12.8 18.4,16.8 M28.4,4.4 C26.4,8.4 24.2,12.6 21.6,16.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M20.2,16.6 C27,16.4 31.6,21 31.4,26.6 C31.2,32.4 26.8,36.2 20,36 C13.4,35.8 8.8,32 9,26.4 C9.2,20.8 13.6,16.8 20.2,16.6 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M20.1,21.4 C21.2,23.8 21.9,25 22.4,25.5 C23.2,25.8 24.4,26 25.8,26.2 C24.5,27.3 23.8,28.1 23.6,28.7 C23.6,29.5 23.8,30.6 24.1,32 C22.7,31.2 21.5,30.8 20.1,30.6 C18.9,30.8 17.7,31.2 16.2,32.1 C16.5,30.5 16.7,29.5 16.6,28.8 C16.3,28.1 15.5,27.3 14.2,26.3 C15.7,26 16.7,25.8 17.3,25.5 C17.8,25 18.7,23.8 20.1,21.4 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 40 40">
+        <path d="M20.2,5.4 C28.8,5.2 34.8,11.4 34.6,20 C34.4,28.8 28.6,34.8 20,34.6 C11.4,34.4 5.4,28.4 5.6,19.8 C5.8,11.4 11.8,5.6 20.2,5.4 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <path d="M20,11.6 L20.1,20.2 L26.4,23.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-video" viewBox="0 0 40 40">
+        <path d="M3.6,11.6 C10,10.6 20,10.7 26.4,11.4 C27,17 26.9,24 26.4,29.4 C20,30.2 10,30.1 3.6,29.4 C3,24 3,17 3.6,11.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M26.6,17.6 C29.6,15.4 32.4,13.4 35.4,11.6 C36,17.4 35.9,23.6 35.4,29.4 C32.4,27.6 29.6,25.6 26.6,23.4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-flag" viewBox="0 0 40 40">
+        <path d="M10.4,34.6 C10,25 10.1,13 10.6,5.4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10.8,6.6 C16,5.2 21,7.8 26,7 C28.6,6.6 30.4,5.8 32.4,4.8 C31.4,9.4 31.2,13.6 32,18.2 C29.6,19.4 27.4,20.2 24.6,20.4 C19.8,20.8 15.2,18.4 10.6,19.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="i-boot" viewBox="0 0 44 40">
+        <path d="M8.6,8.6 C11.4,7.8 14.4,7.9 16.6,8.6 C17.2,13.4 18,17.6 19.6,20.4 C22.6,22.4 27.4,23.8 32.4,25.6 C35.4,26.8 37.4,28.4 37,31.6 C31,32.8 16,32.6 8.8,31.8 C8,26 7.8,15 8.6,8.6 Z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M22.4,22.4 C21.4,24 20.4,25 19,25.4 M27.6,24.6 C26.6,26.4 25.4,27.6 24,28 M8.4,26.4 C15,25.6 26,25.8 33.6,26.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </symbol>
+    </g>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S1 — HERO
+     ═══════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">Der Shine ｜ Campus Ambassador Program 2026</span>
+
+      <h1>
+        <span class="mark">五道關卡<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M4,9 C50,3 120,12 196,5" fill="none" stroke="var(--lime)" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+        </svg></span>。<br>
+        五個月。<br>
+        一段別人沒有的履歷。
+      </h1>
+
+      <p class="lead">
+        我們要找 5–6 位在歐洲讀書、鏡頭前有話想說的創作者。<br>
+        五道關卡會逐關解鎖 —— 你要挑戰的是什麼，錄取後才會揭曉。
+      </p>
+
+      <div class="stats">
+        <!-- 名額是區間，不跑數（中途會出現「5–4」這種不存在的數字） -->
+        <div class="stat"><b>5–6</b><span>名額</span></div>
+        <div class="stat"><b data-count="5">5</b><span>道關卡</span></div>
+        <div class="stat"><b data-count="98000" data-prefix="NT$" data-comma="1">NT$98,000</b><span>計畫總獎金・津貼</span></div>
+      </div>
+      <p class="stats-note">總額為 5–6 位大使合計的上限，含關卡獎金與每月津貼。單人最高可累積 <strong>NT$13,000</strong>。</p>
+
+      <div class="cta-row">
+        <a class="btn" href="#apply">我要報名 <span aria-hidden="true">→</span></a>
+        <a class="link-under" href="#rewards"><span>先看看有什麼獎勵 ↓</span></a>
+      </div>
+
+      <div class="deadline">
+        <svg viewBox="0 0 260 56" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M130,3 C196,2 254,10 255,27 C256,45 194,53 129,53 C64,53 5,46 4,28 C3,11 63,4 130,3 Z"
+                fill="none" stroke="var(--clay)" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+        </svg>
+        報名截止 9/15 ・ 錄取公布 9/25
+      </div>
+    </div>
+
+    <!-- Hero 插畫：歐洲校園的一角 -->
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 520 460" class="wobbly" role="img">
+        <!-- 遠景：霧藍老建築 -->
+        <g>
+          <path d="M44,300 C42,246 44,206 47,182 C86,178 128,179 164,183 C167,214 168,258 166,300 Z" fill="var(--mist-soft)" fill-opacity=".85" transform="translate(4,-4)"/>
+          <path d="M44,300 C42,246 44,206 47,182 C86,178 128,179 164,183 C167,214 168,258 166,300" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M64,182 C68,150 90,132 106,131 C123,130 144,150 148,183" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M105,131 L104,108 M104,111 C112,109 118,112 122,115 C117,118 111,120 104,121" fill="none" stroke="var(--green-deep)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M66,214 C66,203 68,196 74,196 C80,196 82,203 82,215 C82,226 81,232 74,232 C67,232 66,226 66,214 Z M100,213 C100,202 102,195 108,195 C114,195 116,202 116,214 C116,225 115,231 108,231 C101,231 100,225 100,213 Z M134,215 C134,204 136,197 142,197 C148,197 150,204 150,216 C150,227 149,233 142,233 C135,233 134,227 134,215 Z" fill="none" stroke="var(--green-deep)" stroke-width="1.6"/>
+          <path d="M64,264 C86,262 130,262 148,265" fill="none" stroke="var(--green-deep)" stroke-width="1.6" stroke-linecap="round"/>
+          <!-- 尖塔 -->
+          <path d="M196,300 C194,266 196,238 199,222 L214,196 L230,221 C233,240 234,270 232,300 Z" fill="var(--mist-soft)" fill-opacity=".85" transform="translate(-4,4)"/>
+          <path d="M196,300 C194,266 196,238 199,222 L214,196 L230,221 C233,240 234,270 232,300" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M209,248 C209,240 211,236 215,236 C219,236 221,241 221,249 C221,257 220,261 215,261 C210,261 209,256 209,248 Z" fill="none" stroke="var(--green-deep)" stroke-width="1.6"/>
+          <path d="M262,300 C260,272 262,250 265,238 L277,216 L290,239 C293,255 294,278 292,300 Z" fill="var(--mist-soft)" fill-opacity=".7" transform="translate(3,-3)"/>
+          <path d="M262,300 C260,272 262,250 265,238 L277,216 L290,239 C293,255 294,278 292,300" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linejoin="round"/>
+        </g>
+
+        <!-- 中景：大樹 + 長椅 -->
+        <g>
+          <path d="M370,168 C334,170 314,196 320,222 C302,236 308,266 334,270 C346,290 384,292 398,274 C424,272 434,244 418,228 C424,200 400,166 370,168 Z" fill="var(--lime-soft)" fill-opacity=".85" transform="translate(-5,4)"/>
+          <path d="M382,180 C356,178 340,200 346,220 C332,232 338,254 358,258 C368,274 396,276 408,262 C428,260 436,238 424,226 C428,200 406,180 382,180 Z" fill="var(--lime-soft)" fill-opacity=".6"/>
+          <path d="M370,168 C334,170 314,196 320,222 C302,236 308,266 334,270 C346,290 384,292 398,274 C424,272 434,244 418,228 C424,200 400,166 370,168 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M372,288 C371,312 372,334 374,356 M372,306 C364,300 356,296 348,294 M373,322 C381,315 389,311 397,309" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- 長椅 -->
+          <path d="M262,340 C292,336 336,337 364,341 C364,347 364,351 363,356 C334,352 292,352 263,356 C262,351 262,346 262,340 Z" fill="var(--clay-soft)" fill-opacity=".85" transform="translate(4,3)"/>
+          <path d="M262,340 C292,336 336,337 364,341 C364,347 364,351 363,356 C334,352 292,352 263,356 C262,351 262,346 262,340 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M264,326 C294,322 334,323 362,327" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M270,356 L268,382 M356,357 L358,383 M266,340 L268,326 M358,341 L357,327" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linecap="round"/>
+        </g>
+
+        <!-- 前景：兩個無五官學生剪影 -->
+        <g>
+          <!-- 坐著自拍的人 -->
+          <path d="M300,268 C289,268 284,276 285,286 C286,296 290,304 292,314 C304,318 320,317 330,312 C330,300 328,286 324,278 C320,270 310,268 300,268 Z" fill="var(--clay-soft)" fill-opacity=".85" transform="translate(-4,4)"/>
+          <path d="M300,268 C289,268 284,276 285,286 C286,296 290,304 292,314 C304,318 320,317 330,312 C330,300 328,286 324,278 C320,270 310,268 300,268 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M304,244 C295,244 290,250 290,258 C290,266 296,271 304,271 C312,271 318,266 318,258 C318,250 313,244 304,244 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5"/>
+          <path d="M290,254 C288,244 294,238 304,238 C314,238 320,244 318,255 C314,248 296,247 290,254 Z" fill="var(--green-deep)" fill-opacity=".85"/>
+          <path d="M292,340 C294,352 296,362 296,372 M322,338 C324,352 326,362 326,372" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M292,314 C293,326 293,334 292,341 C304,344 320,343 330,339 C330,332 330,322 330,313" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <!-- 舉起的手 + 手機 -->
+          <path d="M322,288 C332,284 340,276 344,266" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M340,248 C346,246 353,247 356,250 C357,256 356,262 353,267 C348,269 342,268 339,265 C337,259 337,252 340,248 Z" fill="var(--lime)" fill-opacity=".9"/>
+          <path d="M340,248 C346,246 353,247 356,250 C357,256 356,262 353,267 C348,269 342,268 339,265 C337,259 337,252 340,248 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linejoin="round"/>
+
+          <!-- 站著背背包拿相機的人 -->
+          <path d="M420,300 C410,300 404,308 404,320 C404,336 406,352 408,366 C420,370 436,369 446,364 C447,348 446,326 442,312 C438,302 430,300 420,300 Z" fill="var(--lime-soft)" fill-opacity=".85" transform="translate(4,-4)"/>
+          <path d="M420,300 C410,300 404,308 404,320 C404,336 406,352 408,366 C420,370 436,369 446,364 C447,348 446,326 442,312 C438,302 430,300 420,300 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M424,274 C415,274 410,280 410,288 C410,296 416,301 424,301 C432,301 438,296 438,288 C438,280 433,274 424,274 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5"/>
+          <path d="M410,283 C409,272 416,267 425,268 C434,269 440,275 438,286 C436,278 428,275 424,277 C420,279 416,283 410,283 Z" fill="var(--green-deep)" fill-opacity=".85"/>
+          <path d="M408,366 C409,382 410,398 410,412 M444,364 C444,380 444,398 444,412" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- 後背包 -->
+          <path d="M446,312 C456,314 462,322 461,334 C460,344 456,350 448,352" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linejoin="round"/>
+          <!-- 相機 -->
+          <path d="M394,326 C402,324 412,325 418,328 C419,336 418,342 416,347 C409,349 399,348 393,345 C391,339 391,331 394,326 Z" fill="var(--paper)" fill-opacity=".9"/>
+          <path d="M394,326 C402,324 412,325 418,328 C419,336 418,342 416,347 C409,349 399,348 393,345 C391,339 391,331 394,326 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M406,331 C411,331 414,334 413,338 C412,342 409,344 405,343 C401,342 399,339 400,336 C401,333 403,331 406,331 Z" fill="none" stroke="var(--green-deep)" stroke-width="1.6"/>
+          <path d="M418,330 C424,330 428,332 430,334" fill="none" stroke="var(--green-deep)" stroke-width="2" stroke-linecap="round"/>
+        </g>
+
+        <!-- 飄浮元素 -->
+        <g class="float" style="animation-delay:0s;transform-origin:100px 90px">
+          <path d="M74,64 C96,61 118,62 128,66 C131,80 130,98 127,110 C108,113 90,113 74,110 C71,96 71,76 74,64 Z" fill="var(--paper)" fill-opacity=".95" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M100,101 C90,93 82,86 82,79 C82,74 86,71 90,71 C94,71 98,74 100,78 C102,74 106,71 110,71 C114,71 118,74 118,79 C118,86 110,93 100,101 Z" fill="none" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+        </g>
+        <g class="float" style="animation-delay:1.5s;transform-origin:210px 80px">
+          <path d="M186,50 C206,47 226,48 236,52 C239,64 238,80 235,92 C216,95 200,95 186,92 C183,80 183,62 186,50 Z" fill="var(--paper)" fill-opacity=".95" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M205,58 C214,63 222,68 229,73 C222,78 214,83 205,87 C204,78 204,67 205,58 Z" fill="none" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+        </g>
+        <g class="float" style="animation-delay:3s;transform-origin:434px 100px">
+          <path d="M410,72 C430,69 450,70 460,74 C463,86 462,102 459,114 C440,117 424,117 410,114 C407,102 407,84 410,72 Z" fill="var(--paper)" fill-opacity=".95" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M435,80 C438,88 440,92 442,94 C445,95 449,96 454,97 C450,100 447,103 446,105 C446,108 447,112 448,117 C443,114 439,112 436,112 C433,112 429,114 424,117 C425,111 426,107 425,105 C424,103 421,100 417,97 C422,96 426,95 428,94 C430,92 432,88 435,80 Z" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linejoin="round"/>
+        </g>
+        <g class="float" style="animation-delay:2.2s;transform-origin:474px 200px">
+          <path d="M452,174 C472,171 492,172 502,176 C505,188 504,202 501,214 C492,215 482,216 476,220 C476,216 476,215 474,214 C466,214 458,214 452,213 C449,202 449,186 452,174 Z" fill="var(--paper)" fill-opacity=".95" stroke="var(--clay)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M462,190 h30 M462,199 h20" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round"/>
+        </g>
+
+        <!-- 地面：接上 §4 主路徑的陶土橘虛線 -->
+        <path d="M40,418 C120,410 200,424 280,418 C360,412 430,428 512,452" fill="none"
+              stroke="var(--clay)" stroke-width="2.5" stroke-dasharray="10 12" stroke-linecap="round" opacity=".55"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S2 — 這是什麼（30 秒讀懂）
+     ═══════════════════════════════════════════════════════════ -->
+<svg class="divider" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,22 C240,4 380,36 720,20 C1060,4 1180,34 1440,16 L1440,40 L0,40 Z" fill="var(--sand)"/>
+</svg>
+<section class="sand" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">What it is</p>
+      <h2>30 秒讀懂這個計畫</h2>
+    </div>
+    <div class="cards-3">
+      <div class="card reveal">
+        <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-calendar"/></svg>
+        <h3>一個五個月的實戰計畫</h3>
+        <p>2026/10 – 2027/02。不是掛名，是每個月真的產出東西、真的被人看見。</p>
+      </div>
+      <div class="card reveal">
+        <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-lock"/></svg>
+        <h3>五道關卡，逐關解鎖</h3>
+        <p>每一關測驗不同的能力。任務內容在關卡開放時才公布 —— 這是計畫的一部分。</p>
+      </div>
+      <div class="card reveal">
+        <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-trophy"/></svg>
+        <h3>帶得走的東西</h3>
+        <p>獎金、實體獎牌、創辦人親筆推薦信、官方帳號曝光，還有一份寫得出來的作品集。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<svg class="divider flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,22 C240,4 380,36 720,20 C1060,4 1180,34 1440,16 L1440,40 L0,40 Z" fill="var(--sand)"/>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════════
+     貫穿路徑容器（S3 – S6）
+     ═══════════════════════════════════════════════════════════ -->
+<div class="trail-wrap">
+  <svg class="trail" viewBox="0 0 100 2400" preserveAspectRatio="none" aria-hidden="true">
+    <path id="trailPath" d="M50,0 L50,2400" fill="none" stroke="var(--clay)" stroke-width="2.5"
+          stroke-dasharray="10 12" stroke-linecap="round" opacity=".55" vector-effect="non-scaling-stroke"/>
+  </svg>
+
+  <!-- ═══ S3 — 我們在找誰 ═══════════════════════════════════ -->
+  <section id="who">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Who we're looking for</p>
+        <h2>如果你是這樣的人，我們想認識你</h2>
+      </div>
+      <div>
+        <div class="reqs">
+          <div class="req reveal">
+            <svg class="chk" width="26" height="26" viewBox="0 0 28 28" aria-hidden="true" style="color:var(--green-deep)"><use href="#i-check"/></svg>
+            <span class="no">01</span>
+            <p>2026/10 – 2027/02 期間為<strong>歐洲留學生或交換生</strong>（任何國家、任何階段）</p>
+          </div>
+          <div class="req tricky reveal">
+            <svg class="chk" width="26" height="26" viewBox="0 0 28 28" aria-hidden="true" style="color:var(--clay)"><use href="#i-check"/></svg>
+            <span class="no">02</span>
+            <p>Instagram 追蹤數 <strong>1,000 以上</strong>，並願意在任務期間將帳號設為<strong>公開</strong></p>
+          </div>
+          <div class="req tricky reveal">
+            <svg class="chk" width="26" height="26" viewBox="0 0 28 28" aria-hidden="true" style="color:var(--clay)"><use href="#i-check"/></svg>
+            <span class="no">03</span>
+            <p>已加入至少 <strong>1 個人數破萬的大專院校相關 Facebook 社團</strong></p>
+          </div>
+          <div class="req reveal">
+            <svg class="chk" width="26" height="26" viewBox="0 0 28 28" aria-hidden="true" style="color:var(--green-deep)"><use href="#i-check"/></svg>
+            <span class="no">04</span>
+            <p>每月穩定交付 1 支 Reels ＋ 1 篇 Threads 貼文</p>
+          </div>
+        </div>
+
+        <div class="notes reveal">
+          <p>追蹤數接近但還不到 1,000？內容很有想法的話還是投，我們會看作品。</p>
+          <p>還沒加入大型學生社團？現在加也算 —— 這一條看的是你有沒有觸及得到台灣學生的管道。</p>
+        </div>
+
+        <!-- 三個無五官頭肩剪影 -->
+        <div class="who-art reveal" style="margin-top:34px" aria-hidden="true">
+          <svg viewBox="0 0 520 200" style="max-width:520px">
+            <g>
+              <circle cx="90" cy="92" r="58" fill="var(--lime-soft)" fill-opacity=".85"/>
+              <path d="M92,64 C80,64 73,72 74,83 C75,93 82,99 92,99 C102,99 109,92 109,82 C109,71 102,64 92,64 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5"/>
+              <path d="M74,78 C71,64 80,56 92,57 C104,58 112,66 109,80 C104,70 82,69 74,78 Z" fill="var(--green-deep)" fill-opacity=".85"/>
+              <path d="M64,136 C64,116 76,104 92,104 C108,104 120,116 120,136" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+              <g transform="rotate(-3 92 170)">
+                <path d="M46,156 C70,153 116,154 139,157 C140,166 140,174 139,182 C116,179 70,180 46,183 C45,174 45,165 46,156 Z" fill="var(--paper)" stroke="var(--green-deep)" stroke-width="2"/>
+                <text x="92" y="175" text-anchor="middle" font-family="'Noto Sans TC',sans-serif" font-size="15" font-weight="700" fill="var(--green-deep)">留學生</text>
+              </g>
+            </g>
+            <g>
+              <circle cx="260" cy="86" r="58" fill="var(--clay-soft)" fill-opacity=".85"/>
+              <path d="M262,58 C250,58 243,66 244,77 C245,87 252,93 262,93 C272,93 279,86 279,76 C279,65 272,58 262,58 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5"/>
+              <path d="M244,72 C242,58 252,51 262,52 C274,53 281,62 278,74 C280,86 276,96 272,100 C274,88 272,78 268,72 C260,76 250,74 244,72 Z" fill="var(--green-deep)" fill-opacity=".85"/>
+              <path d="M234,130 C234,110 246,98 262,98 C278,98 290,110 290,130" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+              <g transform="rotate(2 262 164)">
+                <path d="M216,150 C240,147 286,148 309,151 C310,160 310,168 309,176 C286,173 240,174 216,177 C215,168 215,159 216,150 Z" fill="var(--paper)" stroke="var(--green-deep)" stroke-width="2"/>
+                <text x="262" y="169" text-anchor="middle" font-family="'Noto Sans TC',sans-serif" font-size="15" font-weight="700" fill="var(--green-deep)">創作者</text>
+              </g>
+            </g>
+            <g>
+              <circle cx="430" cy="92" r="58" fill="var(--mist-soft)" fill-opacity=".85"/>
+              <path d="M432,64 C420,64 413,72 414,83 C415,93 422,99 432,99 C442,99 449,92 449,82 C449,71 442,64 432,64 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5"/>
+              <path d="M414,78 C412,64 422,56 432,57 C444,58 451,67 448,80 C442,71 422,70 414,78 Z" fill="var(--green-deep)" fill-opacity=".85"/>
+              <path d="M404,136 C404,116 416,104 432,104 C448,104 460,116 460,136" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linecap="round"/>
+              <g transform="rotate(-2 430 170)">
+                <path d="M372,156 C402,153 458,154 487,157 C488,166 488,174 487,182 C458,179 402,180 372,183 C371,174 371,165 372,156 Z" fill="var(--paper)" stroke="var(--green-deep)" stroke-width="2"/>
+                <text x="430" y="175" text-anchor="middle" font-family="'Noto Sans TC',sans-serif" font-size="15" font-weight="700" fill="var(--green-deep)">說故事的人</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ S4 — 五道關卡 ═══════════════════════════════════════ -->
+  <section id="quests">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Five challenges</p>
+        <h2>五道關卡</h2>
+        <p>每一關測的能力不一樣。任務內容，開關時才公布。</p>
+      </div>
+
+      <div class="quests" id="questGrid">
+        <!-- 由 JS 渲染 -->
+      </div>
+
+      <p class="quest-foot reveal">完整規則與積分制度，會在錄取後的 Onboarding 說明會公布。</p>
+    </div>
+  </section>
+
+  <!-- ═══ S5 — 你會拿到什麼 ═══════════════════════════════════ -->
+  <section class="dark" id="rewards">
+    <div class="wrap">
+      <div class="prize-hero reveal">
+        <p class="cap">最高單人獎金可累積到</p>
+        <div class="prize-num">
+          NT$ 13,000
+          <svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M6,11 C74,4 180,14 294,6" fill="none" stroke="var(--lime)" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+          </svg>
+        </div>
+        <p class="plus">另計：每月 €50 津貼 ・ 實習陪跑課程全程免費</p>
+      </div>
+
+      <p class="group-title reveal">第一組 ・ <span>全員都有</span></p>
+      <div class="prizes">
+        <div class="prize sure reveal">
+          <svg class="tag" width="20" height="20" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-book"/></svg>
+          <h3>實習陪跑課程 全程免費</h3>
+          <p>含課程 ＋ 1V1 諮詢。目標是幫你拿到歐洲或外商的實習 offer。計畫進行中就開課。</p>
+        </div>
+        <div class="prize sure reveal">
+          <svg class="tag" width="20" height="20" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-receipt"/></svg>
+          <h3>每月 €50 津貼</h3>
+          <p>拍片交通、餐飲，實報實銷。</p>
+        </div>
+        <div class="prize sure reveal">
+          <svg class="tag" width="20" height="20" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-cert"/></svg>
+          <h3>正式結業證書</h3>
+          <p>電子版、含創辦人簽名，可直接附在履歷與申請文件。</p>
+        </div>
+        <div class="prize sure reveal">
+          <svg class="tag" width="20" height="20" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-mail"/></svg>
+          <h3>創辦人親筆推薦信</h3>
+          <p>順利結業就有。由創辦人署名，寫你的具體事蹟，不是模板。求職、申請學校都可以附上。</p>
+        </div>
+        <div class="prize sure reveal">
+          <svg class="tag" width="20" height="20" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-camera"/></svg>
+          <h3>官方帳號曝光</h3>
+          <p>以 Der Shine IG Collab 形式發布。</p>
+        </div>
+      </div>
+
+      <svg class="group-sep" viewBox="0 0 180 12" aria-hidden="true">
+        <path d="M4,7 C42,3 78,10 118,6 C140,4 160,6 176,5" fill="none" stroke="var(--lime-soft)" stroke-width="1.6" stroke-linecap="round" opacity=".4"/>
+      </svg>
+
+      <p class="group-title reveal">第二組 ・ <span>看表現拿</span></p>
+      <div class="prizes">
+        <div class="prize reveal">
+          <svg class="tag" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-money"/></svg>
+          <h3>關卡獎金</h3>
+          <p>多道關卡設有獎金，單關最高 NT$5,000。多人可獲得。</p>
+        </div>
+        <div class="prize reveal">
+          <svg class="tag" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-hand"/></svg>
+          <h3>3 個月專案合作機會</h3>
+          <p>提案獲選者可與 Der Shine 一起，把自己的提案真的做出來。工時與報酬另行議定。</p>
+        </div>
+        <div class="prize reveal">
+          <svg class="tag" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+          <svg class="pico" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-medal"/></svg>
+          <h3>結業綜合表現最大獎<span class="only-one">僅一位</span></h3>
+          <p>刻上你名字的實體獎牌 ＋ NT$4,000 職涯裝備補助。</p>
+        </div>
+      </div>
+
+      <p class="prize-foot">各關獎勵的發放條件與級距，於錄取後說明會公布。</p>
+    </div>
+  </section>
+
+  <!-- ═══ S6 — 五個月怎麼走 ═══════════════════════════════════ -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Timeline</p>
+        <h2>五個月怎麼走</h2>
+      </div>
+
+      <div class="tl">
+        <svg class="tl-line" viewBox="0 0 1080 40" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M8,26 C220,16 400,32 620,22 C820,13 950,26 1072,20" fill="none"
+                stroke="var(--clay)" stroke-width="2" stroke-dasharray="7 7" stroke-linecap="round" opacity=".5"/>
+        </svg>
+        <div class="tl-steps">
+          <div class="tl-step reveal"><span class="tl-dot"></span>
+            <div class="tl-date">9/15</div><div class="tl-label">報名截止</div></div>
+          <div class="tl-step reveal"><span class="tl-dot"></span>
+            <div class="tl-date">9/25</div><div class="tl-label">錄取公布</div></div>
+          <div class="tl-step reveal"><span class="tl-dot"></span>
+            <div class="tl-date">10/01</div><div class="tl-label">計畫啟動</div>
+            <p class="tl-desc">Onboarding：完整規則、積分制、第一道關卡公布</p></div>
+          <div class="tl-step reveal"><span class="tl-dot"></span>
+            <div class="tl-date">10 – 02</div><div class="tl-label">五個月旅程</div>
+            <p class="tl-desc">每月一次線上會議，關卡逐一解鎖</p></div>
+          <div class="tl-step reveal"><span class="tl-dot"></span>
+            <div class="tl-date">02/28</div><div class="tl-label">結業典禮</div>
+            <p class="tl-desc">頒發證書、公布總積分冠軍</p></div>
+        </div>
+        <div class="tl-ends" aria-hidden="true">
+          <svg width="54" height="50" viewBox="0 0 44 40"><use href="#i-boot"/></svg>
+          <svg width="50" height="46" viewBox="0 0 40 40"><use href="#i-summit"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /.trail-wrap -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     S7 — 你要付出什麼（誠實區）
+     ═══════════════════════════════════════════════════════════ -->
+<svg class="divider" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,22 C240,4 380,36 720,20 C1060,4 1180,34 1440,16 L1440,40 L0,40 Z" fill="var(--sand)"/>
+</svg>
+<section class="sand" id="commit">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">The commitment</p>
+      <h2>先講清楚：你要投入什麼</h2>
+    </div>
+    <div>
+      <div class="duties">
+        <div class="duty reveal">
+          <svg class="dico" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-video"/></svg>
+          <div><h3>每月固定產出</h3><p>1 支短影音（Reels）＋ 1 篇連動 Threads 貼文。兩件都完成才算數。</p></div>
+        </div>
+        <div class="duty reveal">
+          <svg class="dico" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-connect"/></svg>
+          <div><h3>每月一次線上會議</h3><p>五個月共五次，公布結果、解鎖下一關。</p></div>
+        </div>
+        <div class="duty reveal">
+          <svg class="dico" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-calendar"/></svg>
+          <div><h3>交件時間</h3><p>每月 20 日前交片。我們會給回饋，不是收了就發。</p></div>
+        </div>
+        <div class="duty reveal">
+          <svg class="dico" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-summit"/></svg>
+          <div><h3>額外的關卡挑戰</h3><p>關卡是加分項，不是義務 —— 但總冠軍一定是有參與的人。</p></div>
+        </div>
+      </div>
+
+      <!-- 工時揭露：收據感計算條 -->
+      <div class="receipt reveal">
+        <p class="rt"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:-2px;color:var(--green-mid)" aria-hidden="true"><use href="#i-clock"/></svg> 工時揭露</p>
+        <div class="rrow"><span>固定交付</span><b>約 6 小時 / 月</b></div>
+        <div class="rrow"><span>每參加一場關卡挑戰</span><b>再加 約 3 小時</b></div>
+        <svg class="rsep" viewBox="0 0 400 10" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M4,6 C110,2 250,9 396,4" fill="none" stroke="var(--line)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="rrow total"><span>最輕（只做固定交付）</span><b>約 6 小時 / 月</b></div>
+        <div class="rrow total"><span>最重（每月都挑戰）</span><b>約 9 小時 / 月</b></div>
+      </div>
+
+      <div class="honest reveal">
+        <p>換算下來大約每週 1.5–2 小時。你拿到的東西 —— 作品、後台數據、創辦人推薦信 —— 都是真的可以拿去用的。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<svg class="divider flip" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,22 C240,4 380,36 720,20 C1060,4 1180,34 1440,16 L1440,40 L0,40 Z" fill="var(--sand)"/>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S8 — 常見問題
+     ═══════════════════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">FAQ</p>
+      <h2>常見問題</h2>
+    </div>
+
+    <div class="faq">
+      <details open class="reveal">
+        <summary>我不在德國，在其他歐洲國家也可以報名嗎？</summary>
+        <div class="faq-body">
+          <p>可以。任務期間（2026/10–2027/02）人在歐洲即可，國家與學制不限，交換生也算。</p>
+          <p>我們希望大使分散在不同城市或國家。</p>
+          <p>如果你會在任務期間提早離開歐洲，請在表單裡註明，我們會個別評估。</p>
+        </div>
+      </details>
+
+      <details class="reveal">
+        <summary>我的追蹤數還不到 1,000，可以報名嗎？</summary>
+        <div class="faq-body">
+          <p>可以投。1,000 是主要標準 —— 部分關卡的評選看互動表現，帳號太小會比較吃虧。</p>
+          <p>但標準之外仍有例外，我們會看作品。表單裡的作品連結那一欄，對你最重要。</p>
+        </div>
+      </details>
+
+      <details class="reveal">
+        <summary>為什麼不先公布五道關卡的內容？</summary>
+        <div class="faq-body">
+          <p>為了驚喜感。</p>
+          <p>提前公布，多數人只會準備自己擅長的那一關。五關測的能力是刻意錯開的，逐關解鎖，你才會被推到原本不會去的地方。</p>
+          <p>每一關開放時會正式公布任務，之後有完整執行期可以準備。沒有突襲，只是不劇透。</p>
+        </div>
+      </details>
+
+      <details class="reveal">
+        <summary>每個月大概要花多少時間？</summary>
+        <div class="faq-body">
+          <p>固定交付（1 支 Reels ＋ 1 篇 Threads）約 6 小時／月。參加關卡挑戰，每場約再加 3 小時。</p>
+          <p>最輕約 6 小時，最重約 9 小時，換算約每週 1.5–2 小時。另有每月一次線上會議。</p>
+        </div>
+      </details>
+
+      <details class="reveal">
+        <summary>這是有薪的嗎？</summary>
+        <div class="faq-body">
+          <p>不是月薪制，是津貼加獎勵。</p>
+          <p class="faq-sub">全員都有的：</p>
+          <ul>
+            <li><strong>實習陪跑課程全程免費</strong> —— 含課程 ＋ 1V1 諮詢。目標是幫你拿到歐洲或外商的實習 offer。計畫進行中就開課。</li>
+            <li><strong>每月 €50 津貼</strong> —— 拍片交通、餐飲，實報實銷。</li>
+            <li><strong>正式結業證書</strong> —— 電子版、含創辦人簽名，可直接附在履歷與申請文件。</li>
+            <li><strong>創辦人親筆推薦信</strong> —— 順利結業就有。由創辦人署名，寫的是你具體做過什麼，不是模板。求職、申請學校都可以附上。</li>
+            <li><strong>官方帳號曝光</strong> —— 以 Der Shine IG Collab 形式發布。</li>
+          </ul>
+          <p class="faq-sub">看表現拿的：</p>
+          <ul>
+            <li><strong>關卡獎金</strong> —— 多道關卡設有獎金，單關最高 NT$5,000。多人可獲得。</li>
+            <li><strong>3 個月專案合作機會</strong> —— 提案獲選者可與 Der Shine 一起，把自己的提案真的做出來。工時與報酬另行議定。</li>
+            <li><strong>結業綜合表現最大獎（僅一位）</strong> —— 刻上你名字的實體獎牌，加上 NT$4,000 職涯裝備補助。</li>
+          </ul>
+          <p>最高單人獎金可累積到 <strong>NT$13,000</strong>。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S9 — 報名表單
+     ═══════════════════════════════════════════════════════════ -->
+<section class="dark" id="apply">
+  <div class="wrap">
+    <div class="form-card">
+      <div class="progress" aria-hidden="true"><i id="progBar"></i></div>
+
+      <div class="form-inner" id="formInner">
+        <div class="form-head">
+          <h2>報名表單</h2>
+          <p>共 25 題 ・ 約 8 分鐘 ・ 截止 9/15</p>
+        </div>
+
+        <div class="restored" id="restored" role="status">
+          <span>已還原你上次填的內容。</span>
+          <button type="button" id="clearDraft">清空重填</button>
+        </div>
+
+        <form id="applyForm" novalidate>
+          <div id="formBody"></div>
+
+          <input class="hp" type="text" name="_hp" id="hpField" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-actions">
+            <button class="btn" type="submit" id="submitBtn">提交報名 <span aria-hidden="true">→</span></button>
+            <p class="form-note">送出後我們會在 9/25 前以 Email 通知結果。</p>
+          </div>
+
+          <div class="formerr" id="formErr" role="alert"></div>
+        </form>
+      </div>
+
+      <!-- 成功畫面 -->
+      <div class="success" id="successPane" role="status">
+        <svg width="180" height="140" viewBox="0 0 220 170" aria-hidden="true" style="margin-bottom:8px">
+          <path d="M28,120 C60,112 96,116 132,108" fill="none" stroke="var(--clay)" stroke-width="2.2" stroke-dasharray="8 9" stroke-linecap="round" opacity=".6"/>
+          <g transform="rotate(-12 150 66)">
+            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="var(--lime-soft)" fill-opacity=".85" transform="translate(4,-4)"/>
+            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M105,46 C124,60 141,71 150,71 C159,71 176,60 195,47" fill="none" stroke="var(--green-deep)" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <path d="M42,72 C56,68 68,70 76,74 M34,92 C50,87 62,89 72,93" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <h2>收到了。</h2>
+        <p>我們會在 9/25 前以 Email 通知結果，記得看一下垃圾信匣。<br>在那之前，追蹤 <a class="link-under" href="https://instagram.com/dershine" target="_blank" rel="noopener"><span>@dershine</span></a> 就好。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S10 — Footer
+     ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand">Der Shine ・ 留德青山</div>
+      <p class="tag">校園大使計畫 2026 ・ 2026/10 – 2027/02</p>
+      <div class="foot-links" id="footLinks">
+        <a href="https://instagram.com/dershine" target="_blank" rel="noopener">Instagram @dershine</a>
+        <a href="#apply">我要報名</a>
+      </div>
+    </div>
+    <div aria-hidden="true">
+      <svg viewBox="0 0 360 200" class="wobbly" style="max-width:360px">
+        <path d="M10,168 C90,158 190,172 350,150" fill="none" stroke="var(--lime)" stroke-width="2" stroke-dasharray="9 11" stroke-linecap="round" opacity=".45"/>
+        <path d="M20,164 C70,120 108,88 134,86 C158,84 178,120 204,122 C228,124 258,80 296,34 C316,72 330,124 336,166 Z" fill="rgba(182,232,74,.10)" transform="translate(-5,4)"/>
+        <path d="M20,164 C70,120 108,88 134,86 C158,84 178,120 204,122 C228,124 258,80 296,34 C316,72 330,124 336,166" fill="none" stroke="var(--lime-soft)" stroke-width="2.5" stroke-linejoin="round" opacity=".55"/>
+        <path d="M296,36 L294,4 M295,7 C308,3 318,8 326,13 C317,19 306,23 295,25" fill="none" stroke="var(--lime)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap foot-bot">
+    <span>© 2026 Der Shine 留德青山</span>
+    <span>報名截止 9/15 ・ 錄取公布 9/25</span>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* ═══════════════════════════════════════════════════════════
+   設定 — April 部署前必填
+   ═══════════════════════════════════════════════════════════ */
+// Google Apps Script 網頁應用程式網址（§10.1 步驟 5）
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwJoZnrOlztDVZ4bGpODty0Y8r4NgxGrWJqOupJ0lAKhBic-foP6PzW02ZA0rlXCldK/exec';
+const CONTACT_EMAIL = 'der-shine@outlook.com';
+
+// GDPR：同意的前提是對方看得到自己同意了什麼（spec §9.1）。
+// 官網目前沒有隱私權政策頁，所以改用頁內的「資料使用說明」直接揭露（見 CONSENT_NOTICE）。
+// 之後官網有政策頁了，把網址填進來，說明區塊底部會自動多一行連結。
+const PRIVACY_URL = '';
+
+// ⚠️ 保留期限那兩個日期是提案值，April 確認後才算定案。
+const CONSENT_NOTICE = `
+  <p><strong>蒐集什麼</strong>：這份表單裡你填的全部內容 —— 姓名、Email、就讀資訊、所在地、社群帳號與作品連結。</p>
+  <p><strong>用來做什麼</strong>：只用於本次校園大使的評選與聯繫。不會提供給第三方，也不會用於其他行銷。</p>
+  <p><strong>存在哪裡</strong>：Google 試算表，僅 Der Shine 團隊成員可存取。</p>
+  <p><strong>保留多久</strong>：未錄取者的資料於 2026/12/31 前刪除；錄取者的資料保留至計畫結束後一年（2028/02）。</p>
+  <p><strong>你的權利</strong>：你可以隨時要求查閱、更正或刪除你的資料。寄信到
+     <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>，我們會在 30 天內處理。</p>
+`;
+
+const DRAFT_KEY = 'ds_ca_draft';
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ═══════════════════════════════════════════════════════════
+   S4 — 五道關卡（此表是對外資訊上限）
+   ═══════════════════════════════════════════════════════════ */
+const QUESTS = [
+  { n:'01', scope:'內容力', en:'Content',  teaser:'鏡頭打開的那一秒，你會先說什麼？',       ico:'i-camera'  },
+  { n:'02', scope:'連結力', en:'Connect',  teaser:'一封寄給陌生人的信，能打開幾扇門？',       ico:'i-connect' },
+  { n:'03', scope:'敘事力', en:'Reflect',  teaser:'最有用的經驗，通常是你當初做錯的那個。',   ico:'i-note'    },
+  { n:'04', scope:'成長力', en:'Growth',   teaser:'好東西不會自己被看見。你打算怎麼辦？',     ico:'i-growth'  },
+  { n:'05', scope:'策略力', en:'Strategy', teaser:'這一關會問你一個 CEO 等級的問題。',        ico:'i-summit'  },
+];
+
+function renderQuests(){
+  const grid = document.getElementById('questGrid');
+  grid.innerHTML = QUESTS.map((q,i) => `
+    <button type="button" class="quest reveal rot${i+1}" aria-expanded="false">
+      <span class="quest-inner">
+        <span class="quest-face quest-front">
+          <svg class="lock" width="22" height="22" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-lock"/></svg>
+          <span class="num">Challenge ${q.n}</span>
+          <span class="qmark" aria-hidden="true">?</span>
+          <span class="scope">${q.scope}<em>${q.en}</em></span>
+        </span>
+        <span class="quest-face quest-back">
+          <svg class="qico" width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><use href="#${q.ico}"/></svg>
+          <span class="scope-big">${q.scope}</span>
+          <span class="scope-en">${q.en}</span>
+          <span class="teaser">${q.teaser}</span>
+          <span class="after">任務內容 · 錄取後公布</span>
+        </span>
+      </span>
+    </button>`).join('');
+
+  grid.querySelectorAll('.quest').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+}
+renderQuests();
+
+/* ═══════════════════════════════════════════════════════════
+   進場動畫（IntersectionObserver，只跑一次）
+   ═══════════════════════════════════════════════════════════ */
+(function reveals(){
+  const items = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const sibs = [...e.target.parentElement.children].filter(c => c.classList.contains('reveal'));
+      const idx = Math.max(0, sibs.indexOf(e.target));
+      e.target.style.transitionDelay = (Math.min(idx, 6) * 90) + 'ms';
+      e.target.classList.add('in');
+      obs.unobserve(e.target);
+    });
+  }, { threshold: .25, rootMargin: '0px 0px -40px 0px' });
+  items.forEach(el => io.observe(el));
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   Hero 跑數動畫
+   ═══════════════════════════════════════════════════════════ */
+(function counters(){
+  const nums = document.querySelectorAll('[data-count]');
+  const fmt = (el, v) => {
+    const s = el.dataset.comma ? v.toLocaleString('en-US') : String(v);
+    return (el.dataset.prefix || '') + s;
+  };
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count, t0 = performance.now();
+      const tick = now => {
+        const p = Math.min(1, (now - t0) / 600);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(el, Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      obs.unobserve(el);
+    });
+  }, { threshold: .6 });
+  nums.forEach(el => io.observe(el));
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   §4 貫穿路徑：桌機大蜿蜒 / 手機貼左窄幅
+   ═══════════════════════════════════════════════════════════ */
+(function trail(){
+  const path = document.getElementById('trailPath');
+  const wrap = document.querySelector('.trail-wrap');
+  if (!path || !wrap) return;
+
+  const build = (cx, amp) => {
+    const H = 2400, segs = 8, step = H / segs;
+    let d = `M${cx},0`;
+    for (let i = 0; i < segs; i++) {
+      const dir = i % 2 === 0 ? 1 : -1;
+      const y0 = i * step, y1 = y0 + step;
+      d += ` C${(cx + amp * dir).toFixed(1)},${(y0 + step * .34).toFixed(0)} ${(cx - amp * dir).toFixed(1)},${(y1 - step * .34).toFixed(0)} ${cx},${y1.toFixed(0)}`;
+    }
+    return d;
+  };
+
+  let L = 0, drawn = false;
+
+  function shape(){
+    const desktop = window.matchMedia('(min-width: 900px)').matches;
+    path.setAttribute('d', desktop ? build(50, 30) : build(11, 6));
+    L = path.getTotalLength();
+    if (reduceMotion) {
+      path.style.strokeDasharray = '10 12';
+      path.style.strokeDashoffset = '0';
+      drawn = true;
+    } else if (!drawn) {
+      path.style.strokeDasharray = String(L);
+      path.style.strokeDashoffset = String(L);
+    }
+  }
+
+  function draw(){
+    if (reduceMotion || drawn) return;
+    const r = wrap.getBoundingClientRect();
+    const prog = Math.min(1, Math.max(0, (window.innerHeight * 0.75 - r.top) / r.height));
+    path.style.strokeDashoffset = String(L * (1 - prog));
+    if (prog >= 1) {                       // 畫完之後切回虛線質感
+      drawn = true;
+      path.style.strokeDasharray = '10 12';
+      path.style.strokeDashoffset = '0';
+    }
+  }
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { draw(); ticking = false; });
+  };
+
+  shape();
+  draw();
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', () => { shape(); draw(); });
+})();
+
+/* #wobble 的窄螢幕／reduced-motion 關閉改由 CSS 處理（見 .wobbly 的 media query），
+   JS 版本只在載入當下判斷一次，旋轉手機或改變視窗大小不會重算。 */
+
+/* ═══════════════════════════════════════════════════════════
+   S9 — 報名表單
+   ═══════════════════════════════════════════════════════════ */
+const FORM_SECTIONS = [
+  { id:'basic',   title:'01 ・ 基本資料',   desc:'先認識你' },
+  { id:'social',  title:'02 ・ 你的社群',   desc:'這是計畫的核心，請盡量填詳細' },
+  { id:'fit',     title:'03 ・ 經驗與動機', desc:'我們看的是想法，不是履歷長度' },
+  { id:'ops',     title:'04 ・ 時間與投入', desc:'誠實填就好，這不是加分題' },
+  { id:'extra',   title:'05 ・ 最後幾題',   desc:'快好了' },
+];
+
+const FORM_FIELDS = [
+// ═══ 01 基本資料 ═══
+{ sec:'basic', key:'姓名', label:'姓名', type:'text', required:true },
+
+{ sec:'basic', key:'Email', label:'Email', type:'email', required:true,
+  hint:'錄取通知會寄到這裡，請填常用信箱' },
+
+{ sec:'basic', key:'就讀學校', label:'就讀學校', type:'text', required:true,
+  group:'edu', groupLabel:'就讀資訊', full:true,
+  placeholder:'例：TUM（Technical University of Munich）' },
+
+{ sec:'basic', key:'科系', label:'科系', type:'text', required:true,
+  group:'edu', placeholder:'例：Management and Technology' },
+
+{ sec:'basic', key:'年級', label:'目前年級／學期', type:'text', required:true,
+  group:'edu', placeholder:'例：碩一第二學期' },
+
+{ sec:'basic', key:'所在國家與城市', label:'目前所在國家與城市', type:'text', required:true,
+  placeholder:'例：瑞典 Stockholm' },
+
+{ sec:'basic', key:'任務期間是否全程在歐洲', label:'2026/10–2027/02 期間，你會全程在歐洲嗎？',
+  type:'radio', required:true,
+  options:['是，全程都在歐洲','中途會短暫離開（如寒假返台），但仍可執行任務','中途會離開歐洲較長時間或提早返國'],
+  hint:'選第三項不代表出局，我們會個別評估 —— 但請務必誠實填寫' },
+
+// ═══ 02 你的社群 ═══
+{ sec:'social', key:'IG帳號', label:'你的 Instagram 帳號', type:'text', required:true,
+  handle:true, placeholder:'@yourhandle', hint:'填 @帳號 或完整連結都可以' },
+
+{ sec:'social', key:'IG追蹤數', label:'你目前的 Instagram 追蹤數', type:'select', required:true,
+  options:['500 以下','500–999','1,000–2,999','3,000–9,999','10,000–49,999','50,000 以上'],
+  hint:'本計畫主要尋找 1,000 以上的創作者；接近但未達標、內容力強者仍歡迎投遞' },
+
+{ sec:'social', key:'IG可否設為公開', label:'任務期間你的 IG 可以設為公開帳號嗎？',
+  type:'radio', required:true,
+  options:['可以，目前已是公開帳號','可以，我會在任務開始前改為公開','不方便設為公開'],
+  hint:'大使內容需以 Der Shine 官方帳號 Collab 形式發布，私人帳號無法進行' },
+
+{ sec:'social', key:'Threads帳號', label:'你的 Threads 帳號', type:'text', required:true,
+  handle:true, allowNone:'尚未註冊', placeholder:'@yourhandle 或「尚未註冊」',
+  hint:'每月固定交付包含 1 篇 Threads 貼文。還沒有帳號沒關係，填「尚未註冊」即可' },
+
+{ sec:'social', key:'FB破萬社團', label:'你加入了幾個人數破萬的大專院校相關 Facebook 社團？',
+  type:'select', required:true,
+  options:['3 個以上','2 個','1 個','目前沒有，但我可以在任務開始前加入','目前沒有，也不方便加入'] },
+
+{ sec:'social', key:'FB社團名稱', label:'請列出社團名稱', type:'textarea', required:false,
+  maxlength:200, placeholder:'例：留學生交流版、歐洲留學交流社⋯（一行一個）',
+  hint:'上一題選「目前沒有」可略過' },
+
+{ sec:'social', key:'Dcard帳號', label:'你有 Dcard 帳號嗎？', type:'radio', required:true,
+  options:['有，且可以正常發文','有，但很久沒用／不確定能否發文','沒有，但我願意註冊','沒有，且不方便註冊'] },
+
+{ sec:'social', key:'其他平台', label:'你還有經營哪些平台？（可複選）', type:'checkbox', required:false,
+  options:['小紅書','YouTube','TikTok','Podcast','部落格／個人網站','電子報','LinkedIn','X（Twitter）','沒有其他平台'] },
+
+{ sec:'social', key:'作品連結', label:'請分享一個你做過的作品連結', type:'url', required:false,
+  placeholder:'https://', hint:'影片、貼文、專案、文章都可以 —— 挑你自己最滿意的那一個' },
+
+// ═══ 03 經驗與動機 ═══
+{ sec:'fit', key:'相關經驗', label:'你有以下哪些經驗？（可複選）', type:'checkbox', required:true,
+  options:[
+    '經營個人社群帳號（IG／Threads／小紅書等）',
+    '拍攝與剪輯短影音（Reels／TikTok／Shorts）',
+    '攝影或平面設計',
+    '文字創作（部落格、Dcard、Medium、電子報）',
+    '擔任過品牌大使／校園大使／品牌合作',
+    '學生會、社團幹部或活動籌辦',
+    '業務、商業開發或客戶接洽',
+    'Podcast 或直播主持',
+    '數位廣告投放（Meta／Google Ads）',
+    '以上皆無，但我很想學'
+  ] },
+
+{ sec:'fit', key:'為什麼想成為校園大使', label:'為什麼想成為 Der Shine 校園大使？',
+  type:'textarea', required:true, maxlength:500,
+  hint:'不用寫得像自傳。講一件具體的事，比五句形容詞有用' },
+
+// ═══ 04 時間與投入 ═══
+{ sec:'ops', key:'每週投入時間', label:'你每週願意投入多少時間參與大使任務？',
+  type:'select', required:true,
+  options:['1 小時以下','1–2 小時','2–3 小時','3–5 小時','5 小時以上'],
+  hint:'參考：固定交付約 6 小時／月（約每週 1.5 小時）；參加關卡挑戰，每場約再加 3 小時' },
+
+{ sec:'ops', key:'月會可配合時段', label:'你方便參與線上月會的時段？（可複選）',
+  type:'checkbox', required:true,
+  options:[
+    '平日晚上 19:00–21:00',
+    '平日晚上 21:00–23:00',
+    '週六 上午 10:00–12:00',
+    '週六 下午 14:00–17:00',
+    '週日 上午 10:00–12:00',
+    '週日 下午 14:00–17:00',
+    '以上時段我都能配合'
+  ],
+  hint:'⏰ 以上皆為歐洲中部時間（CET／德國時間）。英國、葡萄牙請自行減 1 小時' },
+
+{ sec:'ops', key:'現有合作關係', label:'你目前是否與其他留學／教育機構有合作或代言關係？',
+  type:'radio', required:true,
+  options:['沒有','有，但與留學顧問服務無關（如美妝、餐飲等）','有，且與留學或教育服務相關'],
+  hint:'選「有」不會直接影響錄取，但我們需要事先知道，避免雙方尷尬' },
+
+// ═══ 05 最後幾題 ═══
+{ sec:'extra', key:'追蹤的留歐KOL', label:'你有追蹤哪些與歐洲留學相關的 KOL？',
+  type:'textarea', required:false, maxlength:300,
+  hint:'帳號名稱或連結都可以，想到幾個寫幾個' },
+
+{ sec:'extra', key:'得知管道', label:'你從何處得知這次招募？', type:'select', required:true,
+  options:['Der Shine Instagram','Der Shine Threads','Der Shine 官網或電子報',
+           'Facebook 社團','Dcard','小紅書','朋友或同學推薦','Google 搜尋','其他'] },
+
+{ sec:'extra', key:'其他補充', label:'還有什麼想讓我們知道的嗎？', type:'textarea',
+  required:false, maxlength:500 },
+
+{ sec:'extra', key:'同意條款', label:'請確認以下事項', type:'checkbox', required:true,
+  requireAll:true,
+  options:[
+    '我已閱讀並同意 Der Shine 依下方「我們會怎麼處理你的資料」說明處理我提供的個人資料',
+    '我了解錄取後產出的內容將以 Der Shine 官方帳號 Collab 形式發布，並可能被官方轉發運用'
+  ],
+  // 揭露內容直接放在勾選框下方展開，不依賴外部頁面 —— 沒有可讀的說明，這個同意在 GDPR 下站不住
+  noteHtml:`<details class="notice"><summary>我們會怎麼處理你的資料</summary>
+      <div class="notice-body">${CONSENT_NOTICE}${
+        PRIVACY_URL ? `<p><a href="${PRIVACY_URL}" target="_blank" rel="noopener">完整隱私權政策</a></p>` : ''
+      }</div></details>` },
+];
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fid = key => 'f_' + key.replace(/[^\w一-龥]/g, '_');
+
+function fieldHTML(f){
+  const id = fid(f.key);
+  const star = f.required ? '<span class="req-star" aria-hidden="true">*</span>' : '';
+  const hint = f.hint ? `<span class="hint" id="${id}_hint">${esc(f.hint)}</span>` : '';
+  const desc = f.hint ? ` aria-describedby="${id}_hint"` : '';
+  const req  = f.required ? ' aria-required="true"' : '';
+  let control = '';
+
+  if (f.type === 'textarea') {
+    control = `<textarea id="${id}" name="${esc(f.key)}"${f.maxlength ? ` maxlength="${f.maxlength}"` : ''}`
+            + `${f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : ''}${desc}${req}></textarea>`
+            + (f.maxlength ? `<span class="counter" data-for="${id}">0 / ${f.maxlength}</span>` : '');
+  } else if (f.type === 'select') {
+    control = `<select id="${id}" name="${esc(f.key)}"${desc}${req}>`
+            + `<option value="">請選擇⋯</option>`
+            + f.options.map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('')
+            + `</select>`;
+  } else if (f.type === 'radio' || f.type === 'checkbox') {
+    const consent = f.requireAll === true;
+    control = `<div class="${consent ? 'consent' : 'opts'}" role="group" aria-labelledby="${id}_lb"${desc}>`
+      + f.options.map((o, i) => {
+          // optionsHtml 只影響顯示；input 的 value 永遠是 options 的純文字，Sheet 才不會混入標記
+          const shown = (f.optionsHtml && f.optionsHtml[i]) || esc(o);
+          return consent
+            ? `<label><input type="checkbox" name="${esc(f.key)}" value="${esc(o)}" data-req-all="1"><span>${shown}</span></label>`
+            : `<label class="opt"><input type="${f.type}" name="${esc(f.key)}" value="${esc(o)}" id="${id}_${i}"><span>${shown}</span></label>`;
+        }).join('')
+      + `</div>`;
+  } else {
+    const t = f.type === 'email' ? 'email' : (f.type === 'url' ? 'url' : 'text');
+    control = `<input type="${t}" id="${id}" name="${esc(f.key)}"`
+            + `${f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : ''}${desc}${req}>`;
+  }
+
+  const labelTag = (f.type === 'radio' || f.type === 'checkbox')
+    ? `<span class="lb" id="${id}_lb">${esc(f.label)}${star}</span>`
+    : `<label class="lb" for="${id}">${esc(f.label)}${star}</label>`;
+
+  return `<div class="field${f.full ? ' full' : ''}" data-key="${esc(f.key)}" data-type="${f.type}"`
+       + `${f.required ? ' data-required="1"' : ''}${f.requireAll ? ' data-require-all="1"' : ''}`
+       + `${f.handle ? ' data-handle="1"' : ''}${f.allowNone ? ` data-allow-none="${esc(f.allowNone)}"` : ''}>`
+       + labelTag + hint + control
+       + `<span class="err" role="alert"></span>`
+       + (f.noteHtml || '')
+       + `</div>`;
+}
+
+function renderForm(){
+  const body = document.getElementById('formBody');
+  body.innerHTML = FORM_SECTIONS.map((sec, si) => {
+    const fields = FORM_FIELDS.filter(f => f.sec === sec.id);
+    const reqCount = fields.filter(f => f.required).length;
+    const [num, ...rest] = sec.title.split(' ・ ');
+
+    // 依 group 屬性把連續欄位包成群組框
+    let html = '', i = 0;
+    while (i < fields.length) {
+      const f = fields[i];
+      if (f.group) {
+        const g = f.group;
+        const same = [];
+        while (i < fields.length && fields[i].group === g) same.push(fields[i++]);
+        html += `<div class="field-wrap"><div class="fgroup">`
+              + `<span class="glabel">${esc(f.groupLabel || '')}<span class="req-star" aria-hidden="true">*</span></span>`
+              + `<div class="gfields">${same.map(fieldHTML).join('')}</div></div></div>`;
+      } else {
+        html += fieldHTML(f); i++;
+      }
+    }
+
+    return `<div class="fsec" data-sec="${sec.id}">
+        ${si ? '<svg class="fsep" viewBox="0 0 560 10" preserveAspectRatio="none" aria-hidden="true"><path d="M4,6 C150,2 380,9 556,4" fill="none" stroke="var(--line)" stroke-width="2" stroke-linecap="round"/></svg>' : ''}
+        <div class="fsec-head">
+          <h3><i>${esc(num)}</i> ・ ${esc(rest.join(' ・ '))}</h3>
+          <span class="fsec-count" data-sec-count="${sec.id}" data-total="${reqCount}">0 / ${reqCount}</span>
+        </div>
+        <p class="fsec-desc">${esc(sec.desc)}</p>
+        <div class="fields">${html}</div>
+      </div>`;
+  }).join('');
+}
+renderForm();
+
+/* ── 欄位讀寫 ─────────────────────────────── */
+const form = document.getElementById('applyForm');
+
+// 同意條款裡的「隱私權政策」連結：點它是去讀政策，不該順手把勾選框打勾
+form.querySelectorAll('.consent a').forEach(a => {
+  a.addEventListener('click', e => e.stopPropagation());
+});
+
+function readField(el){
+  const key = el.dataset.key, type = el.dataset.type;
+  if (type === 'checkbox') {
+    return [...el.querySelectorAll('input:checked')].map(i => i.value);
+  }
+  if (type === 'radio') {
+    const c = el.querySelector('input:checked');
+    return c ? c.value : '';
+  }
+  const c = el.querySelector('input,select,textarea');
+  return c ? c.value.trim() : '';
+}
+
+function writeField(el, val){
+  const type = el.dataset.type;
+  if (type === 'checkbox') {
+    const arr = Array.isArray(val) ? val : [];
+    el.querySelectorAll('input').forEach(i => i.checked = arr.includes(i.value));
+  } else if (type === 'radio') {
+    el.querySelectorAll('input').forEach(i => i.checked = (i.value === val));
+  } else {
+    const c = el.querySelector('input,select,textarea');
+    if (c) c.value = val || '';
+  }
+}
+
+function isFilled(el){
+  const v = readField(el);
+  if (el.dataset.requireAll) {
+    const total = el.querySelectorAll('input').length;
+    return Array.isArray(v) && v.length === total;
+  }
+  return Array.isArray(v) ? v.length > 0 : v !== '';
+}
+
+/* ── 進度條 + 段落計數 ─────────────────────── */
+function updateProgress(){
+  const all = [...form.querySelectorAll('.field[data-required]')];
+  const done = all.filter(isFilled).length;
+  document.getElementById('progBar').style.width = (all.length ? done / all.length * 100 : 0) + '%';
+
+  FORM_SECTIONS.forEach(sec => {
+    const scope = form.querySelector(`.fsec[data-sec="${sec.id}"]`);
+    const badge = form.querySelector(`[data-sec-count="${sec.id}"]`);
+    if (!scope || !badge) return;
+    const reqs = [...scope.querySelectorAll('.field[data-required]')];
+    badge.textContent = `${reqs.filter(isFilled).length} / ${reqs.length}`;
+  });
+}
+
+/* ── 字數計數 ─────────────────────────────── */
+form.addEventListener('input', e => {
+  const t = e.target;
+  if (t.tagName === 'TEXTAREA' && t.maxLength > 0) {
+    const c = form.querySelector(`.counter[data-for="${t.id}"]`);
+    if (c) {
+      c.textContent = `${t.value.length} / ${t.maxLength}`;
+      c.classList.toggle('warn', t.value.length >= t.maxLength * .9);
+    }
+  }
+  onChange();
+});
+form.addEventListener('change', onChange);
+
+function onChange(){
+  updateProgress();
+  saveDraft();
+}
+
+/* ── 草稿自動保存 ─────────────────────────── */
+let saveTimer = null;
+function collect(){
+  const out = {};
+  form.querySelectorAll('.field').forEach(el => out[el.dataset.key] = readField(el));
+  return out;
+}
+function saveDraft(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(collect())); } catch (e) {}
+  }, 350);
+}
+function restoreDraft(){
+  let raw = null;
+  try { raw = localStorage.getItem(DRAFT_KEY); } catch (e) { return; }
+  if (!raw) return;
+  let data; try { data = JSON.parse(raw); } catch (e) { return; }
+  let any = false;
+  form.querySelectorAll('.field').forEach(el => {
+    const v = data[el.dataset.key];
+    if (v === undefined) return;
+    if ((Array.isArray(v) && v.length) || (!Array.isArray(v) && v !== '')) any = true;
+    writeField(el, v);
+  });
+  if (any) document.getElementById('restored').classList.add('on');
+  // 回填後同步字數計數
+  form.querySelectorAll('textarea[maxlength]').forEach(t => {
+    const c = form.querySelector(`.counter[data-for="${t.id}"]`);
+    if (c) c.textContent = `${t.value.length} / ${t.maxLength}`;
+  });
+  updateProgress();
+}
+document.getElementById('clearDraft').addEventListener('click', () => {
+  try { localStorage.removeItem(DRAFT_KEY); } catch (e) {}
+  form.reset();
+  form.querySelectorAll('.field').forEach(el => el.classList.remove('invalid'));
+  document.getElementById('restored').classList.remove('on');
+  form.querySelectorAll('textarea[maxlength]').forEach(t => {
+    const c = form.querySelector(`.counter[data-for="${t.id}"]`);
+    if (c) { c.textContent = `0 / ${t.maxLength}`; c.classList.remove('warn'); }
+  });
+  updateProgress();
+});
+restoreDraft();
+updateProgress();
+
+/* ── 正規化 ───────────────────────────────── */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function normalizeHandle(v){
+  if (!v) return '';
+  let s = v.trim();
+  const m = s.match(/(?:instagram\.com|threads\.net|threads\.com)\/@?([A-Za-z0-9._]+)/i);
+  if (m) return '@' + m[1];
+  s = s.replace(/^https?:\/\/[^/]+\/?/i, '').replace(/\/.*$/, '');
+  s = s.replace(/^@+/, '');
+  return s ? '@' + s : '';
+}
+function normalizeURL(v){
+  if (!v) return '';
+  const s = v.trim();
+  return /^https?:\/\//i.test(s) ? s : 'https://' + s;
+}
+
+/* ── 驗證 ─────────────────────────────────── */
+function setInvalid(el, msg){
+  el.classList.add('invalid');
+  const e = el.querySelector('.err');
+  if (e) e.textContent = msg;
+  el.classList.add('shake');
+  setTimeout(() => el.classList.remove('shake'), 320);
+}
+function clearInvalid(el){
+  el.classList.remove('invalid');
+  const e = el.querySelector('.err');
+  if (e) e.textContent = '';
+}
+
+function validate(){
+  let first = null;
+  form.querySelectorAll('.field').forEach(el => {
+    clearInvalid(el);
+    const v = readField(el);
+    const required = !!el.dataset.required;
+
+    if (el.dataset.requireAll) {
+      const total = el.querySelectorAll('input').length;
+      if (v.length !== total) { setInvalid(el, '請勾選全部項目'); first = first || el; }
+      return;
+    }
+    if (required && (Array.isArray(v) ? v.length === 0 : v === '')) {
+      setInvalid(el, Array.isArray(v) ? '請至少選擇一項' : '這一題是必填的');
+      first = first || el;
+      return;
+    }
+    if (el.dataset.type === 'email' && v && !EMAIL_RE.test(v)) {
+      setInvalid(el, 'Email 格式看起來不太對');
+      first = first || el;
+    }
+  });
+  if (first) {
+    first.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'center' });
+    const focusable = first.querySelector('input,select,textarea');
+    if (focusable) setTimeout(() => focusable.focus({ preventScroll:true }), reduceMotion ? 0 : 400);
+  }
+  return !first;
+}
+
+/* ── 送出 ─────────────────────────────────── */
+async function submitForm(payload){
+  if (!ENDPOINT) return 'unconfigured';
+  try {
+    const res = await fetch(ENDPOINT, {
+      method:'POST',
+      // 必須用 text/plain：application/json 會觸發 CORS preflight，
+      // 而 Apps Script 不回應 OPTIONS，會直接失敗。
+      headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+      redirect:'follow'
+    });
+    const out = await res.json();
+    if (!out.ok) throw new Error(out.error || 'unknown');
+    return true;
+  } catch (err) {
+    // 備援：某些瀏覽器對 Apps Script 的跨網域轉址仍會擋。
+    // no-cors 讀不到回應，但資料寫得進去。
+    try {
+      await fetch(ENDPOINT, { method:'POST', mode:'no-cors',
+        headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload) });
+      return true;
+    } catch (e2) { return false; }
+  }
+}
+
+const submitBtn = document.getElementById('submitBtn');
+const formErr = document.getElementById('formErr');
+let sending = false;
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (sending) return;
+  formErr.classList.remove('on');
+
+  if (!validate()) return;
+
+  // 蜜罐：有值就靜默假成功
+  const hp = document.getElementById('hpField').value;
+  const payload = collect();
+  payload._hp = hp;
+
+  // 正規化
+  form.querySelectorAll('.field[data-handle]').forEach(el => {
+    const none = el.dataset.allowNone;
+    const raw = payload[el.dataset.key];
+    if (!raw || (none && raw === none)) return;
+    payload[el.dataset.key] = normalizeHandle(raw);
+  });
+  form.querySelectorAll('.field[data-type="url"]').forEach(el => {
+    if (payload[el.dataset.key]) payload[el.dataset.key] = normalizeURL(payload[el.dataset.key]);
+  });
+
+  sending = true;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> 送出中⋯';
+
+  if (hp) { showSuccess(); return; }   // 機器人：假成功、不寫入
+
+  const ok = await submitForm(payload);
+
+  if (ok === true) {
+    try { localStorage.removeItem(DRAFT_KEY); } catch (err) {}
+    showSuccess();
+    return;
+  }
+
+  sending = false;
+  submitBtn.disabled = false;
+  submitBtn.innerHTML = '再試一次 <span aria-hidden="true">→</span>';
+  formErr.innerHTML = ok === 'unconfigured'
+    ? '表單目前尚未接上收件系統，你填的內容已暫存在這台裝置上，不會遺失。請稍後再試一次。'
+      + (CONTACT_EMAIL ? ` 或直接寄信到 <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>。` : '')
+    : '送出失敗了，你填的內容都還在。請按「再試一次」。'
+      + (CONTACT_EMAIL ? ` 若一直失敗，請直接寄信到 <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>。` : '');
+  formErr.classList.add('on');
+  formErr.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'center' });
+});
+
+function showSuccess(){
+  const inner = document.getElementById('formInner');
+  const pane = document.getElementById('successPane');
+  inner.classList.add('fade-out');
+  setTimeout(() => {
+    inner.style.display = 'none';
+    pane.classList.add('on');
+    pane.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'center' });
+  }, reduceMotion ? 0 : 360);
+}
+
+/* ── Footer 選填連結 ───────────────────────── */
+if (CONTACT_EMAIL) {
+  const a = document.createElement('a');
+  a.href = 'mailto:' + CONTACT_EMAIL;
+  a.textContent = CONTACT_EMAIL;
+  document.getElementById('footLinks').appendChild(a);
+}
+</script>
+</body>
+</html>
