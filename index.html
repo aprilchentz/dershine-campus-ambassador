@@ -473,7 +473,10 @@ details.notice summary::after{font-size:20px}
   justify-content:space-between;align-items:center;gap:14px}
 .restored.on{display:flex}
 .restored button{background:none;border:0;text-decoration:underline;cursor:pointer;font-size:13px;color:var(--green-mid);padding:0;flex:0 0 auto}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+/* 蜜罐：必須用 display:none，不能只是移到畫面外。
+   離畫面的欄位在瀏覽器眼中仍是「可見的表單欄位」，密碼管理器與自動填入會照填，
+   一填就命中 if(hp) 那條分支 —— 真人使用者會看到送出成功、但資料一個字都沒送出去。 */
+.hp{display:none}
 .success{display:none;text-align:center;padding:clamp(34px,6vw,56px) clamp(24px,5vw,44px)}
 .success.on{display:block}
 .success h2{margin-bottom:14px}
@@ -1698,8 +1701,11 @@ const FORM_FIELDS = [
 
 { sec:'ops', key:'現有合作關係', label:'你目前是否與其他留學／教育機構有合作或代言關係？',
   type:'radio', required:true,
-  options:['沒有','有，但與留學顧問服務無關（如美妝、餐飲等）','有，且與留學或教育服務相關'],
-  hint:'選「有」不會直接影響錄取，但我們需要事先知道，避免雙方尷尬' },
+  options:['沒有','有，但與留學顧問服務無關（如美妝、餐飲等）','有，且與留學或教育服務相關'] },
+
+{ sec:'ops', key:'合作關係說明', label:'若上題選「有」，請說明機構名稱與合作關係',
+  type:'textarea', required:false, maxlength:300,
+  hint:'例：與 XX 留學顧問合作，2025/09 起在 IG 發推廣貼文' },
 
 // ═══ 05 最後幾題 ═══
 { sec:'extra', key:'追蹤的留歐KOL', label:'你有追蹤哪些與歐洲留學相關的 KOL？',
@@ -2111,7 +2117,12 @@ form.addEventListener('submit', async e => {
   submitBtn.disabled = true;
   submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> 送出中⋯';
 
-  if (hp) { showSuccess(); return; }   // 機器人：假成功、不寫入
+  if (hp) {
+    // 留一條線索：蜜罐命中時真人也看得到成功畫面，沒有這行就完全查不出資料去哪了
+    console.warn('[form] 蜜罐欄位有值，判定為機器人，未送出。若你是真人，請回報此訊息。', hp);
+    showSuccess();
+    return;
+  }
 
   if (resumeFile) {
     try {
