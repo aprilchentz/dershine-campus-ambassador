@@ -1356,7 +1356,8 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
    設定 — April 部署前必填
    ═══════════════════════════════════════════════════════════ */
 // Google Apps Script 網頁應用程式網址（§10.1 步驟 5）
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbwJoZnrOlztDVZ4bGpODty0Y8r4NgxGrWJqOupJ0lAKhBic-foP6PzW02ZA0rlXCldK/exec';
+// 2026-08 換成 Der Shine 顧問帳號底下的獨立腳本（舊的掛在個人帳號，已封存）
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycby8qj0NwFzkYp75hDHGzMl1fPXLO8ToxsKYQQQeRd4OA9bEBB4Y_mPiVncobT9QQrwlFQ/exec';
 const CONTACT_EMAIL = 'der-shine@outlook.com';
 
 // GDPR：同意的前提是對方看得到自己同意了什麼（spec §9.1）。
@@ -2041,10 +2042,17 @@ function validate(){
 }
 
 /* ── 送出 ─────────────────────────────────── */
+/* 回傳 true｜'unconfigured'｜Error。
+   關鍵在區分兩種失敗：
+   （a）伺服器有回應但寫入失敗（{ok:false}）—— 重送幾次也一樣，必須讓使用者看到原因。
+   （b）根本連不上／被 CORS 擋掉 —— 這時才值得用 no-cors 再送一次。
+   舊版把兩者一起丟進 catch，no-cors 只要「送得出去」就 resolve，
+   於是 Apps Script 明明回報錯誤、畫面卻顯示送出成功，資料靜靜掉在地上。 */
 async function submitForm(payload){
   if (!ENDPOINT) return 'unconfigured';
+  let res;
   try {
-    const res = await fetch(ENDPOINT, {
+    res = await fetch(ENDPOINT, {
       method:'POST',
       // 必須用 text/plain：application/json 會觸發 CORS preflight，
       // 而 Apps Script 不回應 OPTIONS，會直接失敗。
@@ -2052,19 +2060,24 @@ async function submitForm(payload){
       body: JSON.stringify(payload),
       redirect:'follow'
     });
-    const out = await res.json();
-    if (!out.ok) throw new Error(out.error || 'unknown');
-    return true;
   } catch (err) {
-    // 備援：某些瀏覽器對 Apps Script 的跨網域轉址仍會擋。
-    // no-cors 讀不到回應，但資料寫得進去。
+    // (b) 連不上。備援：no-cors 讀不到回應，但資料寫得進去。
     try {
       await fetch(ENDPOINT, { method:'POST', mode:'no-cors',
         headers:{ 'Content-Type':'text/plain;charset=utf-8' },
         body: JSON.stringify(payload) });
       return true;
-    } catch (e2) { return false; }
+    } catch (e2) { return new Error('連線失敗：' + e2.message); }
   }
+
+  // 有回應 = (a)。回不出 JSON 代表拿到 Google 的登入頁或錯誤頁，
+  // 多半是部署的「具有存取權的使用者」沒設成「任何人」。
+  let out;
+  try { out = await res.json(); }
+  catch (err) { return new Error('伺服器回應不是 JSON（HTTP ' + res.status + '），請檢查 Apps Script 部署權限'); }
+
+  if (!out.ok) return new Error(out.error || '未知錯誤');
+  return true;
 }
 
 const submitBtn = document.getElementById('submitBtn');
@@ -2128,11 +2141,14 @@ form.addEventListener('submit', async e => {
   sending = false;
   submitBtn.disabled = false;
   submitBtn.innerHTML = '再試一次 <span aria-hidden="true">→</span>';
+  const mailto = CONTACT_EMAIL ? ` <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>` : '';
   formErr.innerHTML = ok === 'unconfigured'
     ? '表單目前尚未接上收件系統，你填的內容已暫存在這台裝置上，不會遺失。請稍後再試一次。'
-      + (CONTACT_EMAIL ? ` 或直接寄信到 <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>。` : '')
+      + (mailto && ` 或直接寄信到${mailto}。`)
     : '送出失敗了，你填的內容都還在。請按「再試一次」。'
-      + (CONTACT_EMAIL ? ` 若一直失敗，請直接寄信到 <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>。` : '');
+      + (mailto && ` 若一直失敗，請直接寄信到${mailto}。`)
+      // 把伺服器回報的原因印出來 —— 這行是之後排查串接問題唯一的線索
+      + (ok instanceof Error ? `<br><span class="small" style="opacity:.75">錯誤訊息：${esc(ok.message)}</span>` : '');
   formErr.classList.add('on');
   formErr.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'center' });
 });
