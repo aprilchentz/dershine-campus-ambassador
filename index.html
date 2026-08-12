@@ -1599,11 +1599,14 @@ const FORM_FIELDS = [
 { sec:'basic', key:'歐洲年級學期', label:'目前年級／學期', type:'text', required:true,
   group:'edu_eu', placeholder:'例：碩一第二學期' },
 
+{ sec:'basic', key:'國家與城市', label:'目前所在國家與城市', type:'text', required:true,
+  group:'edu_eu', full:true, placeholder:'例：瑞典 Stockholm' },
+
 { sec:'basic', key:'歐洲就讀身份', label:'你的身份', type:'radio', required:true,
-  options:['留學生','交換生'] },
+  group:'edu_eu', full:true, options:['留學生','交換生'] },
 
 { sec:'basic', key:'畢業或交換結束時間', label:'留學生預計畢業時間／交換學期結束時間', type:'text', required:true,
-  placeholder:'例：2027/06' },
+  group:'edu_eu', full:true, placeholder:'例：2027/06' },
 
 { sec:'basic', key:'台灣就讀學校', label:'學校', type:'text', required:true,
   group:'edu_tw', groupLabel:'台灣就讀資訊' },
@@ -1612,13 +1615,10 @@ const FORM_FIELDS = [
   group:'edu_tw' },
 
 { sec:'basic', key:'台灣就讀狀態', label:'狀態', type:'radio', required:true,
-  options:['註冊中','已畢業','其他'] },
+  group:'edu_tw', full:true, options:['註冊中','已畢業','其他'] },
 
 { sec:'basic', key:'台灣就讀狀態補充', label:'若上題選「其他」，請簡述現況', type:'text', required:false,
-  hint:'其餘狀況可略過' },
-
-{ sec:'basic', key:'所在國家與城市', label:'目前所在國家與城市', type:'text', required:true,
-  placeholder:'例：瑞典 Stockholm' },
+  group:'edu_tw', full:true, hint:'其餘狀況可略過' },
 
 { sec:'basic', key:'任務期間是否全程在歐洲', label:'2026/10–2027/02 期間，你會全程在歐洲嗎？',
   type:'radio', required:true,
@@ -1687,8 +1687,6 @@ const FORM_FIELDS = [
 { sec:'ops', key:'月會可配合時段', label:'你方便參與線上月會的時段？（可複選）',
   type:'checkbox', required:true,
   options:[
-    '平日晚上 19:00–21:00',
-    '平日晚上 21:00–23:00',
     '週六 上午 10:00–12:00',
     '週六 下午 14:00–17:00',
     '週日 上午 10:00–12:00',
