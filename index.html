@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Der Shine 校園大使計畫 2026 ｜ 徵求 5–6 位歐洲留學創作者</title>
 <meta name="description" content="把你在歐洲的日常，變成正在準備出國的台灣學生找得到的答案。Der Shine 留德青山徵求 5–6 位在歐洲讀書的創作者：五道關卡、五個月、最高 NT$13,000 獎勵，另含實習陪跑課程全程免費。報名至 9/15，先到先審。">
-<meta property="og:title" content="青山校園大使 — 五道關卡。五個月。一段別人沒有的履歷">
+<meta property="og:title" content="青山校園大使 — 用你的故事，影響下一位出發的人">
 <meta property="og:description" content="找有動力分享歐洲生活、也想一起把品牌做起來的人。Der Shine 校園大使計畫 2026 徵件中，名額 5–6 位，報名至 9/15，先到先審。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ambassador.der-shine.com/">
@@ -93,6 +93,16 @@ p{margin:0 0 1em}
   display:inline-block;background:var(--lime-soft);color:var(--green-deep);
   border-radius:var(--r-pill);padding:7px 16px;letter-spacing:.1em;
 }
+/* Hero 招募線：字級介於品牌 pill 與主 slogan 之間，是獨立的中間層級，
+   不是放大版 eyebrow —— 寬字距在這個尺寸的中文字上會裂開，所以另外收窄 */
+.hero-recruit{
+  display:inline-block;font-family:var(--font-body);font-weight:800;
+  font-size:clamp(22px, 3.2vw, 36px);letter-spacing:.01em;
+  color:var(--green-deep);background:var(--lime-soft);
+  border-radius:var(--r-pill);
+  padding:clamp(10px,1.6vw,15px) clamp(20px,3vw,30px);
+  margin:22px 0 6px;
+}
 .sec-head{max-width:640px;margin-bottom:clamp(32px,5vw,56px)}
 .sec-head p{color:var(--green-mid);margin-top:14px}
 
@@ -148,7 +158,6 @@ p{margin:0 0 1em}
 .brand-logo{display:block}
 .foot-brand-row{display:flex;align-items:center;gap:14px}
 .brand-logo.footer{filter:brightness(0) invert(1);opacity:.9}   /* 深綠底上轉白 */
-.hero-recruit{margin:18px 0 0}
 .hero h1{font-size:var(--fs-hero);line-height:1.12;margin:14px 0 20px;letter-spacing:-.01em}
 .hero .lead{max-width:34em}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0 12px;max-width:520px}
@@ -242,6 +251,25 @@ p{margin:0 0 1em}
 .quest[aria-expanded="true"] .quest-inner{transform:rotateY(180deg)}
 .quest:focus-visible .quest-inner{transform:rotateY(180deg)}
 .quest-foot{text-align:center;color:var(--green-mid);font-size:14px;margin-top:34px}
+
+/* ── 浮動「我要報名」── */
+.apply-fab{
+  position:fixed;right:22px;bottom:28px;z-index:60;
+  display:inline-flex;align-items:center;gap:8px;
+  background:#E7F0B8;color:var(--green-deep);
+  padding:14px 22px;border-radius:var(--r-pill);
+  font-weight:700;text-decoration:none;box-shadow:var(--shadow-lift);
+  opacity:0;transform:translateY(14px) scale(.92);pointer-events:none;
+  transition:opacity .3s ease,transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.apply-fab.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.apply-fab:hover{transform:translateY(-2px) scale(1.03);box-shadow:var(--shadow-lift)}
+@media (max-width:520px){
+  .apply-fab{right:16px;bottom:16px;padding:12px 18px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .apply-fab{transition:none}
+}
 
 /* ═══════════════════════════════════════════════════════════
    S5 你會拿到什麼
@@ -365,7 +393,7 @@ details[open] summary::after{transform:rotate(45deg)}
 .field label.lb{display:block;font-weight:700;font-size:15px;color:var(--green-deep);margin-bottom:2px;line-height:1.6}
 .field .req-star{color:var(--clay);margin-left:4px}
 .field .hint{display:block;font-size:13px;color:var(--green-mid);margin:2px 0 10px;line-height:1.6}
-.field input[type=text],.field input[type=email],.field input[type=url],.field select,.field textarea{
+.field input[type=text],.field input[type=email],.field input[type=url],.field input[type=date],.field select,.field textarea{
   width:100%;font-family:inherit;font-size:16px;line-height:1.6;color:var(--ink);
   background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-sm);
   padding:14px 16px;transition:border-color .2s,box-shadow .2s;
@@ -376,6 +404,13 @@ details[open] summary::after{transform:rotate(45deg)}
   background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
 .field input:focus,.field select:focus,.field textarea:focus{
   outline:none;border-color:var(--green-deep);box-shadow:0 0 0 4px rgba(182,232,74,.35)}
+.field input[type=file]{
+  width:100%;font-family:inherit;font-size:14px;color:var(--green-mid);
+  background:var(--paper);border:1.5px dashed var(--line);border-radius:var(--r-sm);
+  padding:12px 14px;cursor:pointer;
+}
+.field input[type=file]:focus{outline:none;border-color:var(--green-deep);box-shadow:0 0 0 4px rgba(182,232,74,.35)}
+.field .filename{display:block;font-size:13px;color:var(--green-deep);font-weight:700;margin-top:8px}
 .field.invalid input,.field.invalid select,.field.invalid textarea,.field.invalid .opts{border-color:var(--clay)}
 .field.invalid .lb{color:var(--clay)}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
@@ -506,10 +541,6 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
   .tl-dot{left:0;top:-32px}
   .tl-line{display:block;position:absolute;top:0;left:0;width:100%;height:40px}
 }
-@media (hover:hover) and (min-width:900px){
-  .quest:hover .quest-inner{transform:rotateY(180deg)}
-}
-
 /* 貼紙式微旋轉（僅桌機，手機不旋轉避免擠壓） */
 @media (min-width:768px){
   .quest.rot1 .quest-front{transform:rotate(-1.5deg)}
@@ -537,6 +568,11 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
 <body>
 
 <a class="skip" href="#apply">跳到報名表單</a>
+
+<a class="apply-fab" href="#apply" id="applyFab" aria-label="我要報名，前往報名表單">
+  <svg width="18" height="18" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+  <span>我要報名</span>
+</a>
 
 <!-- ═══ 共用 SVG defs ═══════════════════════════════════════ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -663,20 +699,30 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
         <span class="pill">Der Shine ｜ Campus Ambassador Program 2026</span>
       </div>
 
-      <p class="eyebrow recruiting hero-recruit">青山校園大使招募中</p>
+      <p class="hero-recruit">青山校園大使招募</p>
 
       <h1>
         <span class="mark">五道關卡<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true">
           <path d="M4,9 C50,3 120,12 196,5" fill="none" stroke="var(--lime)" stroke-width="7" stroke-linecap="round" opacity=".9"/>
         </svg></span>。<br>
         五個月。<br>
-        一段別人沒有的履歷。
+        用你的故事，影響下一位出發的人。
       </h1>
 
       <p class="lead">
-        我們要找 5–6 位在歐洲讀書、本來就有話想說的創作者。<br>
-        你拍的東西，會被正在準備出國的台灣學生看到。<br>
-        五道關卡會逐關解鎖 —— 你要挑戰的是什麼，錄取後才會揭曉。
+        我們正在找 5–6 位在歐洲讀書、<br>
+        有熱情、有想法、喜歡分享，也願意跳出舒適圈的人。
+      </p>
+      <p class="lead" style="margin-top:.6em">
+        接下來五個月，五道關卡將逐步解鎖。
+      </p>
+      <p class="lead" style="margin-top:.6em">
+        你會創作、挑戰、嘗試一些新的事，<br>
+        也會和我們一起參與 Der Shine 青山接下來的成長。
+      </p>
+      <p class="lead" style="margin-top:.6em">
+        如果你也認同我們正在做的事，<br>
+        我們很想邀請你一起加入。
       </p>
 
       <div class="stats">
@@ -804,12 +850,12 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
       <div class="card reveal">
         <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-calendar"/></svg>
         <h3>一個五個月的實戰計畫</h3>
-        <p>2026/10 – 2027/02。不是掛名，是每個月真的產出東西、真的被人看見。</p>
+        <p>2026/10 – 2027/02。每月有固定交付任務。</p>
       </div>
       <div class="card reveal">
         <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-lock"/></svg>
         <h3>五道關卡，逐關解鎖</h3>
-        <p>每一關測驗不同的能力。任務內容在關卡開放時才公布 —— 這是計畫的一部分。</p>
+        <p>每一關測驗不同的能力。任務內容在關卡開放時才公布。</p>
       </div>
       <div class="card reveal">
         <svg class="ico" width="48" height="48" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-trophy"/></svg>
@@ -831,7 +877,7 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
     <div class="reveal">
       <p class="eyebrow">Why it exists</p>
       <h2>你正在過的日子，是別人正在查的答案</h2>
-      <p class="lead" style="margin-top:16px">這個計畫的重點不在闖關，在於有人會因為你講的話，做出自己的決定。</p>
+      <p class="lead" style="margin-top:16px">成為 Campus Ambassador，你將不只是分享自己的留學生活，而是成為連結歐洲與台灣學生的橋樑。</p>
     </div>
     <div>
       <div class="cards-2">
@@ -872,7 +918,7 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
       <div class="reveal">
         <p class="eyebrow">Who we're looking for</p>
         <h2>如果你是這樣的人，我們想認識你</h2>
-        <p class="lead" style="margin-top:16px">下面四項是硬條件。除此之外，我們最看重的是你想不想講。</p>
+        <p class="lead" style="margin-top:16px">我們在尋找主動、積極、對打造新品牌有興趣，且願意幫助下一個準備出發的學生的你。</p>
       </div>
       <div>
         <div class="reqs">
@@ -1090,7 +1136,7 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
   <div class="wrap split">
     <div class="reveal">
       <p class="eyebrow">The commitment</p>
-      <h2>先講清楚：你要投入什麼</h2>
+      <h2>你要投入什麼</h2>
     </div>
     <div>
       <div class="duties">
@@ -1108,7 +1154,7 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
         </div>
         <div class="duty reveal">
           <svg class="dico" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-summit"/></svg>
-          <div><h3>額外的關卡挑戰</h3><p>關卡是加分項，不是義務 —— 但總冠軍一定是有參與的人。</p></div>
+          <div><h3>五道關卡挑戰</h3><p>五位大使都要參加，逐關解鎖。你要投入多少時間，自己決定。</p></div>
         </div>
       </div>
 
@@ -1116,17 +1162,15 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
       <div class="receipt reveal">
         <p class="rt"><svg width="16" height="16" viewBox="0 0 40 40" style="vertical-align:-2px;color:var(--green-mid)" aria-hidden="true"><use href="#i-clock"/></svg> 工時揭露</p>
         <div class="rrow"><span>固定交付</span><b>約 6 小時 / 月</b></div>
-        <div class="rrow"><span>每參加一場關卡挑戰</span><b>再加 約 3 小時</b></div>
-        <svg class="rsep" viewBox="0 0 400 10" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M4,6 C110,2 250,9 396,4" fill="none" stroke="var(--line)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <div class="rrow total"><span>最輕（只做固定交付）</span><b>約 6 小時 / 月</b></div>
-        <div class="rrow total"><span>最重（每月都挑戰）</span><b>約 9 小時 / 月</b></div>
+        <div class="rrow"><span>五道關卡挑戰</span><b>時間由你自行決定投入</b></div>
       </div>
 
       <div class="honest reveal">
-        <p>換算下來大約每週 1.5–2 小時。你拿到的東西 —— 作品、後台數據、創辦人推薦信 —— 都是真的可以拿去用的。</p>
-        <p>獎金和獎勵是實的。但五個月結束後留在你手上的，主要是那批內容、那些數據，以及一群固定在看你的人。</p>
+        <p>說到底，這不是一份只看工時的兼職。</p>
+        <p>五個月裡，你會完成每月固定作品，也會挑戰一些原本可能不會主動去做的事。</p>
+        <p>我們會給方向、給回饋，也會把真實的內容數據分享給你。</p>
+        <p>獎金和獎勵會在計畫中發生。</p>
+        <p>但五個月結束後，真正留下來的，是你做過的作品、累積的經驗，以及你一路建立起來的東西。</p>
       </div>
     </div>
   </div>
@@ -1136,7 +1180,58 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
 </svg>
 
 <!-- ═══════════════════════════════════════════════════════════
-     S8 — 常見問題
+     S8 — 報名表單
+     ═══════════════════════════════════════════════════════════ -->
+<section class="dark" id="apply">
+  <div class="wrap">
+    <div class="form-card">
+      <div class="progress" aria-hidden="true"><i id="progBar"></i></div>
+
+      <div class="form-inner" id="formInner">
+        <div class="form-head">
+          <h2>報名表單</h2>
+          <p>共 33 題 ・ 約 10 分鐘 ・ 截止 9/15，先到先審</p>
+        </div>
+
+        <div class="restored" id="restored" role="status">
+          <span>已還原你上次填的內容。</span>
+          <button type="button" id="clearDraft">清空重填</button>
+        </div>
+
+        <form id="applyForm" novalidate>
+          <div id="formBody"></div>
+
+          <input class="hp" type="text" name="_hp" id="hpField" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-actions">
+            <button class="btn" type="submit" id="submitBtn">提交報名 <span aria-hidden="true">→</span></button>
+            <p class="form-note">送出後我們會在 9/25 前以 Email 通知結果。</p>
+          </div>
+
+          <div class="formerr" id="formErr" role="alert"></div>
+        </form>
+      </div>
+
+      <!-- 成功畫面 -->
+      <div class="success" id="successPane" role="status">
+        <svg width="180" height="140" viewBox="0 0 220 170" aria-hidden="true" style="margin-bottom:8px">
+          <path d="M28,120 C60,112 96,116 132,108" fill="none" stroke="var(--clay)" stroke-width="2.2" stroke-dasharray="8 9" stroke-linecap="round" opacity=".6"/>
+          <g transform="rotate(-12 150 66)">
+            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="var(--lime-soft)" fill-opacity=".85" transform="translate(4,-4)"/>
+            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M105,46 C124,60 141,71 150,71 C159,71 176,60 195,47" fill="none" stroke="var(--green-deep)" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <path d="M42,72 C56,68 68,70 76,74 M34,92 C50,87 62,89 72,93" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <h2>收到了。</h2>
+        <p>我們會在 9/25 前以 Email 通知結果，記得看一下垃圾信匣。<br>在那之前，追蹤 <a class="link-under" href="https://www.instagram.com/der.shine/" target="_blank" rel="noopener"><span>@der.shine</span></a> 就好。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     S9 — 常見問題
      ═══════════════════════════════════════════════════════════ -->
 <section id="faq">
   <div class="wrap">
@@ -1175,17 +1270,26 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
       <details class="reveal">
         <summary>你們比較想找什麼樣的人？</summary>
         <div class="faq-body">
-          <p>有東西想講的人。</p>
-          <p>五個月要交十件固定作品，題目不會每次都落在你熟悉的範圍。本來就有分享習慣的人，做起來會順很多。</p>
-          <p>另一件同樣重要的：我們希望大使願意跟我們一起把品牌做起來。內容方向、活動怎麼辦、社群怎麼經營，都會問你們的意見。</p>
+          <p>我們特別歡迎這樣的人：</p>
+          <ul>
+            <li>熱愛分享，對留學／交換生活有東西想講</li>
+            <li>樂於幫助正在準備前往歐洲的學生</li>
+            <li>對內容創作、品牌經營或新創有興趣</li>
+            <li>願意一起打造一個有影響力的留學社群</li>
+          </ul>
+          <p>另外一件對我們來說也很重要：</p>
+          <p>我們不希望校園大使只是幫我們發內容的人。</p>
+          <p>這是第一屆計畫，很多事情都還在長出來。</p>
+          <p>內容方向怎麼做、活動怎麼辦、社群接下來可以往哪裡走，我們會想聽你的意見，也真的有可能把你的想法做出來。</p>
+          <p>所以，如果你想找的不是一份「接任務、交作業」的合作，而是想參與一個品牌慢慢長起來的過程，我們可能會很適合。</p>
         </div>
       </details>
 
       <details class="reveal">
         <summary>每個月大概要花多少時間？</summary>
         <div class="faq-body">
-          <p>固定交付（1 支 Reels ＋ 1 篇 Threads）約 6 小時／月。參加關卡挑戰，每場約再加 3 小時。</p>
-          <p>最輕約 6 小時，最重約 9 小時，換算約每週 1.5–2 小時。另有每月一次線上會議。</p>
+          <p>固定交付（1 支 Reels ＋ 1 篇 Threads）約 6 小時／月，換算約每週 1.5 小時。另有每月一次線上會議。</p>
+          <p>五道關卡挑戰要花多少時間，由你自己決定投入。</p>
         </div>
       </details>
 
@@ -1210,57 +1314,6 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
           <p>最高單人獎金可累積到 <strong>NT$13,000</strong>。</p>
         </div>
       </details>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     S9 — 報名表單
-     ═══════════════════════════════════════════════════════════ -->
-<section class="dark" id="apply">
-  <div class="wrap">
-    <div class="form-card">
-      <div class="progress" aria-hidden="true"><i id="progBar"></i></div>
-
-      <div class="form-inner" id="formInner">
-        <div class="form-head">
-          <h2>報名表單</h2>
-          <p>共 25 題 ・ 約 8 分鐘 ・ 截止 9/15，先到先審</p>
-        </div>
-
-        <div class="restored" id="restored" role="status">
-          <span>已還原你上次填的內容。</span>
-          <button type="button" id="clearDraft">清空重填</button>
-        </div>
-
-        <form id="applyForm" novalidate>
-          <div id="formBody"></div>
-
-          <input class="hp" type="text" name="_hp" id="hpField" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="form-actions">
-            <button class="btn" type="submit" id="submitBtn">提交報名 <span aria-hidden="true">→</span></button>
-            <p class="form-note">送出後我們會在 9/25 前以 Email 通知結果。</p>
-          </div>
-
-          <div class="formerr" id="formErr" role="alert"></div>
-        </form>
-      </div>
-
-      <!-- 成功畫面 -->
-      <div class="success" id="successPane" role="status">
-        <svg width="180" height="140" viewBox="0 0 220 170" aria-hidden="true" style="margin-bottom:8px">
-          <path d="M28,120 C60,112 96,116 132,108" fill="none" stroke="var(--clay)" stroke-width="2.2" stroke-dasharray="8 9" stroke-linecap="round" opacity=".6"/>
-          <g transform="rotate(-12 150 66)">
-            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="var(--lime-soft)" fill-opacity=".85" transform="translate(4,-4)"/>
-            <path d="M104,44 C132,40 172,41 196,46 C198,62 197,84 194,98 C170,102 130,101 106,97 C103,84 102,58 104,44 Z" fill="none" stroke="var(--green-deep)" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M105,46 C124,60 141,71 150,71 C159,71 176,60 195,47" fill="none" stroke="var(--green-deep)" stroke-width="2" stroke-linecap="round"/>
-          </g>
-          <path d="M42,72 C56,68 68,70 76,74 M34,92 C50,87 62,89 72,93" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
-        </svg>
-        <h2>收到了。</h2>
-        <p>我們會在 9/25 前以 Email 通知結果，記得看一下垃圾信匣。<br>在那之前，追蹤 <a class="link-under" href="https://www.instagram.com/der.shine/" target="_blank" rel="noopener"><span>@der.shine</span></a> 就好。</p>
-      </div>
     </div>
   </div>
 </section>
@@ -1315,7 +1368,7 @@ const PRIVACY_URL = '';
 const CONSENT_NOTICE = `
   <p><strong>蒐集什麼</strong>：這份表單裡你填的全部內容 —— 姓名、Email、就讀資訊、所在地、社群帳號與作品連結。</p>
   <p><strong>用來做什麼</strong>：只用於本次校園大使的評選與聯繫。不會提供給第三方，也不會用於其他行銷。</p>
-  <p><strong>存在哪裡</strong>：Google 試算表，僅 Der Shine 團隊成員可存取。</p>
+  <p><strong>存在哪裡</strong>：Google 試算表；若你上傳了履歷，檔案存放於 Google Drive。皆僅 Der Shine 團隊成員可存取。</p>
   <p><strong>保留多久</strong>：未錄取者的資料於 2026/12/31 前刪除；錄取者的資料保留至計畫結束後一年（2028/02）。</p>
   <p><strong>你的權利</strong>：你可以隨時要求查閱、更正或刪除你的資料。寄信到
      <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>，我們會在 30 天內處理。</p>
@@ -1358,13 +1411,51 @@ function renderQuests(){
     </button>`).join('');
 
   grid.querySelectorAll('.quest').forEach(btn => {
+    const inner = btn.querySelector('.quest-inner');
+
+    // 半翻提示：滑鼠移過／手指滑過卡片時，跟著游標位置稍微轉一點，
+    // 讓人一看就知道這張卡可以翻，不用先讀懂才會去點。
+    const peek = clientX => {
+      if (btn.getAttribute('aria-expanded') === 'true' || reduceMotion) return;
+      const rect = btn.getBoundingClientRect();
+      const frac = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      inner.style.transform = `rotateY(${(frac * 28).toFixed(1)}deg)`;
+    };
+    const resetPeek = () => {
+      if (btn.getAttribute('aria-expanded') !== 'true') inner.style.transform = '';
+    };
+
+    btn.addEventListener('mousemove', e => peek(e.clientX));
+    btn.addEventListener('mouseleave', resetPeek);
+    btn.addEventListener('touchmove', e => { if (e.touches[0]) peek(e.touches[0].clientX); }, { passive:true });
+    btn.addEventListener('touchend', resetPeek);
+    btn.addEventListener('touchcancel', resetPeek);
+
     btn.addEventListener('click', () => {
       const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
+      inner.style.transform = open ? '' : 'rotateY(180deg)';
     });
   });
 }
 renderQuests();
+
+/* ═══════════════════════════════════════════════════════════
+   浮動「我要報名」：滑過 hero 後出現，捲到報名表單本身時隱藏
+   ═══════════════════════════════════════════════════════════ */
+(function applyFab(){
+  const fab = document.getElementById('applyFab');
+  const hero = document.querySelector('.hero');
+  const applySec = document.getElementById('apply');
+  if (!fab) return;
+  if (!hero || !applySec || !('IntersectionObserver' in window)) { fab.classList.add('show'); return; }
+  let heroVisible = true, applyVisible = false;
+  const update = () => fab.classList.toggle('show', !heroVisible && !applyVisible);
+  new IntersectionObserver(es => { es.forEach(e => heroVisible = e.isIntersecting); update(); }).observe(hero);
+  // threshold 0：只要表單區塊還有任何一部分在畫面內就算「看得到」——
+  // 表單很長，若用比例門檻，捲到區塊中段時可見比例會一直低於門檻，浮動鍵會誤判成該顯示。
+  new IntersectionObserver(es => { es.forEach(e => applyVisible = e.isIntersecting); update(); }).observe(applySec);
+})();
 
 /* ═══════════════════════════════════════════════════════════
    進場動畫（IntersectionObserver，只跑一次）
@@ -1496,15 +1587,35 @@ const FORM_FIELDS = [
 { sec:'basic', key:'Email', label:'Email', type:'email', required:true,
   hint:'錄取通知會寄到這裡，請填常用信箱' },
 
-{ sec:'basic', key:'就讀學校', label:'就讀學校', type:'text', required:true,
-  group:'edu', groupLabel:'就讀資訊', full:true,
+{ sec:'basic', key:'生日', label:'生日', type:'date', required:true },
+
+{ sec:'basic', key:'歐洲就讀學校', label:'學校', type:'text', required:true,
+  group:'edu_eu', groupLabel:'歐洲就讀資訊', full:true,
   placeholder:'例：TUM（Technical University of Munich）' },
 
-{ sec:'basic', key:'科系', label:'科系', type:'text', required:true,
-  group:'edu', placeholder:'例：Management and Technology' },
+{ sec:'basic', key:'歐洲科系', label:'科系', type:'text', required:true,
+  group:'edu_eu', placeholder:'例：Management and Technology' },
 
-{ sec:'basic', key:'年級', label:'目前年級／學期', type:'text', required:true,
-  group:'edu', placeholder:'例：碩一第二學期' },
+{ sec:'basic', key:'歐洲年級學期', label:'目前年級／學期', type:'text', required:true,
+  group:'edu_eu', placeholder:'例：碩一第二學期' },
+
+{ sec:'basic', key:'歐洲就讀身份', label:'你的身份', type:'radio', required:true,
+  options:['留學生','交換生'] },
+
+{ sec:'basic', key:'畢業或交換結束時間', label:'留學生預計畢業時間／交換學期結束時間', type:'text', required:true,
+  placeholder:'例：2027/06' },
+
+{ sec:'basic', key:'台灣就讀學校', label:'學校', type:'text', required:true,
+  group:'edu_tw', groupLabel:'台灣就讀資訊' },
+
+{ sec:'basic', key:'台灣科系', label:'科系', type:'text', required:true,
+  group:'edu_tw' },
+
+{ sec:'basic', key:'台灣就讀狀態', label:'狀態', type:'radio', required:true,
+  options:['註冊中','已畢業','其他'] },
+
+{ sec:'basic', key:'台灣就讀狀態補充', label:'若上題選「其他」，請簡述現況', type:'text', required:false,
+  hint:'其餘狀況可略過' },
 
 { sec:'basic', key:'所在國家與城市', label:'目前所在國家與城市', type:'text', required:true,
   placeholder:'例：瑞典 Stockholm' },
@@ -1565,13 +1676,13 @@ const FORM_FIELDS = [
 
 { sec:'fit', key:'為什麼想成為校園大使', label:'為什麼想成為 Der Shine 校園大使？',
   type:'textarea', required:true, maxlength:500,
-  hint:'不用寫得像自傳。講一件具體的事，比五句形容詞有用' },
+  hint:'你是誰、你有什麼有趣的想法，你加入青山大使後想要推動什麼？或是你有什麼特別的故事，又或是你很了解我們品牌有什麼想跟青山一起做的嗎？' },
 
 // ═══ 04 時間與投入 ═══
 { sec:'ops', key:'每週投入時間', label:'你每週願意投入多少時間參與大使任務？',
   type:'select', required:true,
   options:['1 小時以下','1–2 小時','2–3 小時','3–5 小時','5 小時以上'],
-  hint:'參考：固定交付約 6 小時／月（約每週 1.5 小時）；參加關卡挑戰，每場約再加 3 小時' },
+  hint:'參考：固定交付約 6 小時／月（約每週 1.5 小時）；五道關卡挑戰的時間，由你自行決定投入' },
 
 { sec:'ops', key:'月會可配合時段', label:'你方便參與線上月會的時段？（可複選）',
   type:'checkbox', required:true,
@@ -1602,6 +1713,9 @@ const FORM_FIELDS = [
 
 { sec:'extra', key:'其他補充', label:'還有什麼想讓我們知道的嗎？', type:'textarea',
   required:false, maxlength:500 },
+
+{ sec:'extra', key:'履歷CV', label:'上傳你的履歷（CV）', type:'file', required:false,
+  hint:'以上的資料已經足夠，但如果你想讓我們更了解你，歡迎上傳你的履歷。PDF，10MB 以內' },
 
 { sec:'extra', key:'同意條款', label:'請確認以下事項', type:'checkbox', required:true,
   requireAll:true,
@@ -1647,8 +1761,11 @@ function fieldHTML(f){
             : `<label class="opt"><input type="${f.type}" name="${esc(f.key)}" value="${esc(o)}" id="${id}_${i}"><span>${shown}</span></label>`;
         }).join('')
       + `</div>`;
+  } else if (f.type === 'file') {
+    control = `<input type="file" id="${id}" name="${esc(f.key)}" accept=".pdf"${desc}>`
+            + `<span class="filename" id="${id}_name"></span>`;
   } else {
-    const t = f.type === 'email' ? 'email' : (f.type === 'url' ? 'url' : 'text');
+    const t = f.type === 'email' ? 'email' : (f.type === 'url' ? 'url' : (f.type === 'date' ? 'date' : 'text'));
     control = `<input type="${t}" id="${id}" name="${esc(f.key)}"`
             + `${f.placeholder ? ` placeholder="${esc(f.placeholder)}"` : ''}${desc}${req}>`;
   }
@@ -1710,8 +1827,41 @@ form.querySelectorAll('.consent a').forEach(a => {
   a.addEventListener('click', e => e.stopPropagation());
 });
 
+/* ── 履歷（CV）上傳：選填，錄取評選要用得到 ─────────── */
+const RESUME_MAX_BYTES = 10 * 1024 * 1024;
+let resumeFile = null;
+(function initResumeUpload(){
+  const fieldEl = form.querySelector('.field[data-type="file"]');
+  if (!fieldEl) return;
+  const input = fieldEl.querySelector('input[type="file"]');
+  const nameEl = fieldEl.querySelector('.filename');
+  input.addEventListener('change', () => {
+    const file = input.files[0];
+    clearInvalid(fieldEl);
+    resumeFile = null;
+    nameEl.textContent = '';
+    if (!file) return;
+    if (file.size > RESUME_MAX_BYTES) {
+      setInvalid(fieldEl, '檔案超過 10MB，請壓縮後再上傳');
+      input.value = '';
+      return;
+    }
+    resumeFile = file;
+    nameEl.textContent = `已選擇：${file.name}`;
+  });
+})();
+function fileToBase64(file){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 function readField(el){
   const key = el.dataset.key, type = el.dataset.type;
+  if (type === 'file') return '';   // 檔案內容另外用 resumeFile 追蹤，不進一般欄位收集
   if (type === 'checkbox') {
     return [...el.querySelectorAll('input:checked')].map(i => i.value);
   }
@@ -1725,6 +1875,7 @@ function readField(el){
 
 function writeField(el, val){
   const type = el.dataset.type;
+  if (type === 'file') return;   // 瀏覽器不允許用程式回填 file input
   if (type === 'checkbox') {
     const arr = Array.isArray(val) ? val : [];
     el.querySelectorAll('input').forEach(i => i.checked = arr.includes(i.value));
@@ -1821,6 +1972,9 @@ document.getElementById('clearDraft').addEventListener('click', () => {
     const c = form.querySelector(`.counter[data-for="${t.id}"]`);
     if (c) { c.textContent = `0 / ${t.maxLength}`; c.classList.remove('warn'); }
   });
+  resumeFile = null;
+  const resumeName = form.querySelector('.field[data-type="file"] .filename');
+  if (resumeName) resumeName.textContent = '';
   updateProgress();
 });
 restoreDraft();
@@ -1947,6 +2101,23 @@ form.addEventListener('submit', async e => {
   submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span> 送出中⋯';
 
   if (hp) { showSuccess(); return; }   // 機器人：假成功、不寫入
+
+  if (resumeFile) {
+    try {
+      payload.resume = {
+        name: resumeFile.name,
+        mime: resumeFile.type || 'application/octet-stream',
+        base64: await fileToBase64(resumeFile)
+      };
+    } catch (err) {
+      sending = false;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '再試一次 <span aria-hidden="true">→</span>';
+      formErr.innerHTML = '履歷檔案讀取失敗，請重新選擇檔案，或清空後再試一次。';
+      formErr.classList.add('on');
+      return;
+    }
+  }
 
   const ok = await submitForm(payload);
 
