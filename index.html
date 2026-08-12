@@ -50,6 +50,11 @@
   --shadow-lift:0 18px 44px rgba(31,61,43,.16);
 
   --fs-hero:clamp(38px, 8vw, 84px);
+  /* Hero 主標自成一階（--fs-hero 的 80%）。不直接改 --fs-hero，
+     因為 S5 的獎金數字 NT$98,000 也吃它，那邊要維持原本的份量。 */
+  --fs-hero-h1:clamp(30px, 6.4vw, 67px);
+  /* Tagline 再放大 30%，成為 hero 裡最大的一行 */
+  --fs-hero-tag:clamp(39px, 8.3vw, 87px);
   --fs-h2:clamp(28px, 4.6vw, 52px);
   --fs-h3:clamp(19px, 2.2vw, 26px);
   --fs-body:clamp(15px, 1.7vw, 18px);
@@ -97,10 +102,10 @@ p{margin:0 0 1em}
    不是放大版 eyebrow —— 寬字距在這個尺寸的中文字上會裂開，所以另外收窄 */
 .hero-recruit{
   display:inline-block;font-family:var(--font-body);font-weight:800;
-  font-size:clamp(22px, 3.2vw, 36px);letter-spacing:.01em;
+  font-size:clamp(14px, 1.7vw, 20px);letter-spacing:.02em;
   color:var(--green-deep);background:var(--lime-soft);
   border-radius:var(--r-pill);
-  padding:clamp(10px,1.6vw,15px) clamp(20px,3vw,30px);
+  padding:clamp(7px,1vw,10px) clamp(14px,1.8vw,20px);
   margin:22px 0 6px;
 }
 .sec-head{max-width:640px;margin-bottom:clamp(32px,5vw,56px)}
@@ -158,8 +163,19 @@ p{margin:0 0 1em}
 .brand-logo{display:block}
 .foot-brand-row{display:flex;align-items:center;gap:14px}
 .brand-logo.footer{filter:brightness(0) invert(1);opacity:.9}   /* 深綠底上轉白 */
-.hero h1{font-size:var(--fs-hero);line-height:1.12;margin:14px 0 20px;letter-spacing:-.01em}
+.hero h1{font-size:var(--fs-hero-h1);line-height:1.12;margin:14px 0 12px;letter-spacing:-.01em}
+/* Tagline 拆出 h1 自成一段，才能獨立給字級。留在 h1 裡的話會跟著主標一起縮放。 */
+.hero-tag{
+  font-family:var(--font-display);font-weight:900;color:var(--green-deep);
+  font-size:var(--fs-hero-tag);line-height:1.1;letter-spacing:-.01em;
+  margin:0 0 22px;
+}
 .hero .lead{max-width:34em}
+/* 320px 級的窄機（iPhone SE 一代）放不下這幾句的全形字數，會多出一次不受控的折行。
+   只在這個寬度把 hero 內文降一級，讓每個 <br> 之間都剛好維持一行。 */
+@media (max-width:374px){
+  .hero .lead{font-size:13.5px}
+}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:34px 0 12px;max-width:520px}
 .stats-note{max-width:520px;font-size:13px;line-height:1.75;color:var(--green-mid);margin:0 0 30px}
 .stats-note strong{color:var(--green-deep)}
@@ -252,23 +268,33 @@ p{margin:0 0 1em}
 .quest:focus-visible .quest-inner{transform:rotateY(180deg)}
 .quest-foot{text-align:center;color:var(--green-mid);font-size:14px;margin-top:34px}
 
-/* ── 浮動「我要報名」── */
-.apply-fab{
-  position:fixed;right:22px;bottom:28px;z-index:60;
+/* ── 浮動鍵（我要報名／常見問題）──
+   靠右垂直置中，兩顆上下堆疊。定位交給外層 .fab-stack，
+   按鈕本身才能自由使用 transform 做進場與 hover —— 若把 position:fixed
+   放在按鈕上，置中用的 translateY(-50%) 會被 hover 的 transform 覆蓋掉。 */
+.fab-stack{
+  position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:60;
+  display:flex;flex-direction:column;align-items:flex-end;gap:10px;
+}
+.fab{
   display:inline-flex;align-items:center;gap:8px;
-  background:#E7F0B8;color:var(--green-deep);
   padding:14px 22px;border-radius:var(--r-pill);
   font-weight:700;text-decoration:none;box-shadow:var(--shadow-lift);
-  opacity:0;transform:translateY(14px) scale(.92);pointer-events:none;
+  opacity:0;transform:translateX(14px) scale(.92);pointer-events:none;
   transition:opacity .3s ease,transform .3s cubic-bezier(.2,.8,.2,1);
 }
-.apply-fab.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
-.apply-fab:hover{transform:translateY(-2px) scale(1.03);box-shadow:var(--shadow-lift)}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.fab.show:hover{transform:translateX(-2px) scale(1.03)}
+.apply-fab{background:#E7F0B8;color:var(--green-deep)}
+.faq-fab{background:var(--paper);color:var(--green-deep);border:1px solid var(--line)}
+/* 手機回到右下角：置中的兩顆鍵在 375px 上佔掉約三成寬，會壓在內文右側。
+   桌機頁面寬、內容置中，才不會擋到，所以只在窄螢幕改回角落。 */
 @media (max-width:520px){
-  .apply-fab{right:16px;bottom:16px;padding:12px 18px;font-size:14px}
+  .fab-stack{top:auto;bottom:16px;transform:none;right:12px;gap:8px}
+  .fab{padding:11px 16px;font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){
-  .apply-fab{transition:none}
+  .fab{transition:none}
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -572,10 +598,16 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
 
 <a class="skip" href="#apply">跳到報名表單</a>
 
-<a class="apply-fab" href="#apply" id="applyFab" aria-label="我要報名，前往報名表單">
-  <svg width="18" height="18" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
-  <span>我要報名</span>
-</a>
+<div class="fab-stack" id="fabStack">
+  <a class="fab apply-fab" href="#apply" id="applyFab" aria-label="我要報名，前往報名表單">
+    <svg width="18" height="18" viewBox="0 0 28 28" aria-hidden="true"><use href="#i-check"/></svg>
+    <span>我要報名</span>
+  </a>
+  <a class="fab faq-fab" href="#faq" id="faqFab" aria-label="常見問題，前往 FAQ">
+    <span aria-hidden="true">?</span>
+    <span>常見問題</span>
+  </a>
+</div>
 
 <!-- ═══ 共用 SVG defs ═══════════════════════════════════════ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -708,20 +740,17 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
         <span class="mark">五道關卡<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true">
           <path d="M4,9 C50,3 120,12 196,5" fill="none" stroke="var(--lime)" stroke-width="7" stroke-linecap="round" opacity=".9"/>
         </svg></span>。<br>
-        五個月。<br>
-        用你的故事，影響下一位出發的人。
+        五個月。
       </h1>
+      <p class="hero-tag">用你的故事，影響下一位出發的人。</p>
 
       <p class="lead">
-        我們正在找 5–6 位在歐洲讀書、<br>
-        有熱情、有想法、喜歡分享，也願意跳出舒適圈的人。
+        我們正在找在歐洲讀書或交換，<br>
+        有想法、熱愛分享，也願意跳出舒適圈的人。
       </p>
       <p class="lead" style="margin-top:.6em">
-        接下來五個月，五道關卡將逐步解鎖。
-      </p>
-      <p class="lead" style="margin-top:.6em">
-        你會創作、挑戰、嘗試一些新的事，<br>
-        也會和我們一起參與 Der Shine 青山接下來的成長。
+        在計畫期間，你將會創作、挑戰一些新的事，<br>
+        也會一起參與 Der Shine 青山接下來的成長。
       </p>
       <p class="lead" style="margin-top:.6em">
         如果你也認同我們正在做的事，<br>
@@ -1333,6 +1362,7 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
       </div>
       <p class="tag">校園大使計畫 2026 ・ 2026/10 – 2027/02</p>
       <div class="foot-links" id="footLinks">
+        <a href="https://www.der-shine.com/" target="_blank" rel="noopener">Der Shine 官網</a>
         <a href="https://www.instagram.com/der.shine/" target="_blank" rel="noopener">Instagram @der.shine</a>
         <a href="#apply">我要報名</a>
       </div>
@@ -1445,20 +1475,29 @@ function renderQuests(){
 renderQuests();
 
 /* ═══════════════════════════════════════════════════════════
-   浮動「我要報名」：滑過 hero 後出現，捲到報名表單本身時隱藏
+   浮動鍵：滑過 hero 後出現；各自的目標區塊進入畫面時，該顆自己隱藏
+   （已經看到報名表單了還飄一顆「我要報名」只是擋路）
    ═══════════════════════════════════════════════════════════ */
-(function applyFab(){
-  const fab = document.getElementById('applyFab');
+(function floatingNav(){
   const hero = document.querySelector('.hero');
-  const applySec = document.getElementById('apply');
-  if (!fab) return;
-  if (!hero || !applySec || !('IntersectionObserver' in window)) { fab.classList.add('show'); return; }
-  let heroVisible = true, applyVisible = false;
-  const update = () => fab.classList.toggle('show', !heroVisible && !applyVisible);
+  const pairs = [
+    { el:document.getElementById('applyFab'), target:document.getElementById('apply') },
+    { el:document.getElementById('faqFab'),   target:document.getElementById('faq') }
+  ].filter(p => p.el && p.target);
+  if (!pairs.length) return;
+  if (!hero || !('IntersectionObserver' in window)) { pairs.forEach(p => p.el.classList.add('show')); return; }
+
+  let heroVisible = true;
+  const atTarget = new Map(pairs.map(p => [p.el, false]));
+  const update = () => pairs.forEach(p =>
+    p.el.classList.toggle('show', !heroVisible && !atTarget.get(p.el)));
+
   new IntersectionObserver(es => { es.forEach(e => heroVisible = e.isIntersecting); update(); }).observe(hero);
-  // threshold 0：只要表單區塊還有任何一部分在畫面內就算「看得到」——
+  // threshold 0：只要目標區塊還有任何一部分在畫面內就算「看得到」——
   // 表單很長，若用比例門檻，捲到區塊中段時可見比例會一直低於門檻，浮動鍵會誤判成該顯示。
-  new IntersectionObserver(es => { es.forEach(e => applyVisible = e.isIntersecting); update(); }).observe(applySec);
+  pairs.forEach(p => new IntersectionObserver(
+    es => { es.forEach(e => atTarget.set(p.el, e.isIntersecting)); update(); }
+  ).observe(p.target));
 })();
 
 /* ═══════════════════════════════════════════════════════════
