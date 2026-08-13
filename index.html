@@ -269,15 +269,13 @@ p{margin:0 0 1em}
 }
 .quest.hint .quest-front{animation:questHint 1.5s ease both}
 
-/* 第一張卡片進場時自動翻一次再翻回來，直接示範「這是可以翻的」。
-   用獨立的 class 而非改 aria-expanded —— 那是使用者操作的狀態，
+/* 第一張卡片的示範翻面改由 JS 設 inline transform（見 questHints）——
+   同一個元素的半翻提示與點擊都是寫 inline style，這裡放 CSS 規則會被蓋掉。
+   示範全程不動 aria-expanded：那是使用者操作的狀態，
    程式拿來播動畫會對螢幕閱讀器謊報「已展開」。 */
-.quest.demo .quest-inner{transform:rotateY(180deg)}
-
 @media (prefers-reduced-motion:reduce){
   .quest-front{transition:none}
   .quest.hint .quest-front{animation:none}
-  .quest.demo .quest-inner{transform:none}
 }
 .quest-back{
   background:var(--green-deep);color:var(--cream);transform:rotateY(180deg);
@@ -1287,7 +1285,9 @@ footer .tag{color:var(--lime-soft);opacity:.8;font-size:15px;margin:8px 0 0}
           <path d="M42,72 C56,68 68,70 76,74 M34,92 C50,87 62,89 72,93" fill="none" stroke="var(--clay)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
         </svg>
         <h2>收到了。</h2>
-        <p>我們會在 9/25 前以 Email 通知結果，記得看一下垃圾信匣。<br>在那之前，追蹤 <a class="link-under" href="https://www.instagram.com/der.shine/" target="_blank" rel="noopener"><span>@der.shine</span></a> 就好。</p>
+        <p>報名確認信已經寄出，記得看一下垃圾信匣 —— <strong>收到那封信，就代表我們收到你的報名了</strong>。</p>
+        <p>沒收到的話，請寄信到 <a class="link-under" href="mailto:der-shine@outlook.com"><span>der-shine@outlook.com</span></a> 問我們，<strong>不需要重填一次表單</strong>。</p>
+        <p>我們會在 9/25 前以 Email 通知結果。在那之前，追蹤 <a class="link-under" href="https://www.instagram.com/der.shine/" target="_blank" rel="noopener"><span>@der.shine</span></a> 就好。</p>
       </div>
     </div>
   </div>
@@ -1522,10 +1522,14 @@ renderQuests();
       const card = e.target;
       obs.unobserve(card);                 // 提示只值得看一次
       if (cards.indexOf(card) === 0) {
-        setTimeout(() => card.classList.add('demo'), 300);
-        // 使用者若在示範途中自己點開，aria-expanded 會接手維持翻面狀態，
-        // 移除 .demo 不會把他點開的卡片翻回去 —— 兩條規則的結果相同。
-        setTimeout(() => card.classList.remove('demo'), 1600);
+        // 必須寫 inline transform，不能用 class：renderQuests 的半翻提示與點擊
+        // 都是直接設 inner.style.transform，inline style 會蓋掉 stylesheet 規則，
+        // 只要使用者碰過這張卡，class 版的示範就再也不會動。
+        const inner = card.querySelector('.quest-inner');
+        const idle = () => card.getAttribute('aria-expanded') === 'false';
+        setTimeout(() => { if (idle()) inner.style.transform = 'rotateY(180deg)'; }, 300);
+        // 使用者若在示範途中自己點開，就別把他點開的卡片翻回去
+        setTimeout(() => { if (idle()) inner.style.transform = ''; }, 1600);
       } else {
         card.classList.add('hint');
       }
