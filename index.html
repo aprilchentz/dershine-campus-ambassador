@@ -1506,12 +1506,13 @@ function renderQuests(){
 renderQuests();
 
 /* ═══════════════════════════════════════════════════════════
-   關卡卡片的「可互動」提示
+   關卡卡片的「可互動」提示（桌機與手機一致）
    桌機有 hover 可以講，觸控裝置沒有 —— 只能趁卡片捲進畫面的那一下講：
-   第一張自動翻一次再翻回來當示範，其餘四張閃一下萊姆。
+   前 DEMO_CARDS 張自動翻一次再翻回來當示範，其餘的閃一下萊姆。
    每張只做一次（unobserve），來回捲動不會一直閃。
    ═══════════════════════════════════════════════════════════ */
 (function questHints(){
+  const DEMO_CARDS = 3;                    // 只翻一張太容易被錯過；翻滿五張又太吵
   const cards = [...document.querySelectorAll('.quest')];
   if (!cards.length || !('IntersectionObserver' in window)) return;
   if (matchMedia('(prefers-reduced-motion:reduce)').matches) return;
@@ -1521,15 +1522,18 @@ renderQuests();
       if (!e.isIntersecting) return;
       const card = e.target;
       obs.unobserve(card);                 // 提示只值得看一次
-      if (cards.indexOf(card) === 0) {
+      const i = cards.indexOf(card);
+      if (i < DEMO_CARDS) {
         // 必須寫 inline transform，不能用 class：renderQuests 的半翻提示與點擊
         // 都是直接設 inner.style.transform，inline style 會蓋掉 stylesheet 規則，
         // 只要使用者碰過這張卡，class 版的示範就再也不會動。
         const inner = card.querySelector('.quest-inner');
         const idle = () => card.getAttribute('aria-expanded') === 'false';
-        setTimeout(() => { if (idle()) inner.style.transform = 'rotateY(180deg)'; }, 300);
+        // 桌機兩欄並排時同一批卡片會一起進場，錯開起始時間才不會整排同時翻
+        const lead = 300 + i * 240;
+        setTimeout(() => { if (idle()) inner.style.transform = 'rotateY(180deg)'; }, lead);
         // 使用者若在示範途中自己點開，就別把他點開的卡片翻回去
-        setTimeout(() => { if (idle()) inner.style.transform = ''; }, 1600);
+        setTimeout(() => { if (idle()) inner.style.transform = ''; }, lead + 1300);
       } else {
         card.classList.add('hint');
       }
